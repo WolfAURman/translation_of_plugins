@@ -29,5 +29,5 @@ Messages:
     hologram-time-left: "&6Времени осталось: &e%time_left%"     # Placeholders: %time_left%
     airdrops-list-title: "&e<- Всего создано &6%drop_count% &eвоздушных посылок ->" # "&e<----- [Всего создано &6%drop_count% &eвоздушных посылок] ----->" # Это оригинальный вариант, если он вам нужен, удалите первое значение, и уберите после него комментарий    # Placeholders: %drop_count%
     airdrops-list-lines: "&e- &2ID: &a%drop_id% &f| &2Название: &a%drop_name% &f| &2Шанс: &a%drop_chance%"    # Placeholders: %drop_id%, %drop_name%, %drop_chance%
-    cannot-destroy-airdrops: "&cВы не можете уничтожать аирдропы"    # Placeholders: N/A
+    cannot-destroy-airdrops: "&cВы не можете уничтожать воздушные посылки"    # Placeholders: N/A
     airdrop-summoned-broadcast: "&aВоздушная посылка приземлилась на координатах %x_coord% %y_coord% %z_coord%"    # Placeholders: N/A
