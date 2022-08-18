@@ -1,0 +1,33 @@
+# Перевод сделал WolfAURman
+Messages:
+    # Все сообщения поддерживают цветовые коды с "&" (1.16+ цвета еще не реализованы)
+    
+    prefix: "&e[&aUltimateAirdrops&e]&f"
+    
+    command-doesnt-exist: "Этой команды не существует, используйте &e/airdrops help &fдля получения списка доступных команд"     # Placeholders: N/A
+    player-not-online: "Этот игрок не в сети"     # Placeholders: %offline_player%
+    command-no-arguments: "Используйте /airdrops help для получения списка всех доступных команд"     # Placeholders: N/A
+    plugin-reload: "UltimateAirdrops успешно перезагружен!"     # Placeholders: N/A
+    not-enough-permissions: "&cВы не имеете нужных разрешений для этого"     # Placeholders: N/A
+    airdrop-succesfully-created: "&aВы успешно создали воздушную посылку с названием %drop_name% и с шансом равным %drop_chance% &e(ID: &6%drop_id%&e)"     # Placeholders: %drop_name%, %drop_chance%, %drop_id%
+    airdrop-create-chance-not-number: "&cВыбранный вами шанс не является целым числом (/airdrops create <имя> <шанс>)"     # Placeholders: %drop_prob%
+    airdrop-create-bad-sintax: "&cВведён ошибочный синтаксис для команды, используйте /airdrops create <имя> <шанс>"     # Placeholders: N/A
+    no-airdrops-created: "&cУ вас нет ещё ни одной воздушной посылки"     # Placeholders: N/A
+    could-not-get-create-arguments: "&cНе удалось получить аргументы команды create, используете ли вы правильный синтаксис?"     # Placeholders: N/A
+    could-not-find-drop-safe-spawn-zone: "&cВоздушная посылка не смогла найти блок для спавна в проверках %checks%"     # Placeholders: %checks%
+    cannot-execute-from-console: "&cЭту команду нельзя выполнить из консоли"     # Placeholders: N/A
+    point-to-a-chest-to-create: "&cВам нужно смотреть на сундук, чтобы создать воздушную посылку"     # Placeholders: N/A
+    no-airdrops-created-list: "&cУ вас еще нет созданных воздушных посылок"     # Placeholders: N/A
+    airdrop-removed-succesfully: "&aВоздушная посылка с ID %airdrop_id% успешно удалена"     # Placeholders: %airdrop_id%
+    no-airdrop-with-that-id-remove: "&cВоздушная посылка с ID %airdrop_id% не создана"     # Placeholders: %airdrop_id%
+    summon-airdrop-doesnt-exist: "&cВоздушная посылка с ID %airdrop_id% не существует"     # Placeholders: %airdrop_id%
+    succesfully-summoned-airdrop: "&aВоздушная посылка с ID %airdrop_id% успешно создана на координатах %x_coord% %y_coord% %z_coord%"     # Placeholders: %airdrop_id%, %x_coord%, %y_coord%, %z_coord%
+    airdrops-drop-removed: "&eВоздушная посылка с ID %airdrop_id% была удалена на координатах %x_coord% %y_coord% %z_coord%"     # Placeholders: %airdrop_id%, %x_coord%, %y_coord%, %z_coord%
+    airdrops-nothing-to-remove: "&aНет воздушных посылок для удаления!"     # Placeholders: N/A
+    airdrops-cleared: "&aВсего было очищено %total_airdrops% воздушных посылок!"     # Placeholders: %total_airdrops%
+    hologram-drop-name: "&2Сброс: &a%drop_name%"     # Placeholders: %drop_name%
+    hologram-time-left: "&6Времени осталось: &e%time_left%"     # Placeholders: %time_left%
+    airdrops-list-title: "&e<- Всего создано &6%drop_count% &eвоздушных посылок ->" # "&e<----- [Всего создано &6%drop_count% &eвоздушных посылок] ----->" # Это оригинальный вариант, если он вам нужен, удалите первое значение, и уберите после него комментарий    # Placeholders: %drop_count%
+    airdrops-list-lines: "&e- &2ID: &a%drop_id% &f| &2Название: &a%drop_name% &f| &2Шанс: &a%drop_chance%"    # Placeholders: %drop_id%, %drop_name%, %drop_chance%
+    cannot-destroy-airdrops: "&cВы не можете уничтожать аирдропы"    # Placeholders: N/A
+    airdrop-summoned-broadcast: "&aВоздушная посылка приземлилась на координатах %x_coord% %y_coord% %z_coord%"    # Placeholders: N/A
