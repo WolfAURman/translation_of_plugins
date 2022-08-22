@@ -1,0 +1,79 @@
+Prefix: '&8[&2QualityArmory&8]&r '
+NoPermAnvilMessage: ' &a У вас нет разрешения на использование этой оружейной лавки. Нажмите Shift+ЛКМ
+  для доступа к наковальне.'
+NoPerm: '&c У вас нет разрешения на это.'
+Reload: ' Пушки и конфиги были перезагружены.'
+ShopName: 'Стр. магазина вооружения: '
+NoMoney: У вас недостаточно денег, чтобы купить это.
+CraftingBenchName: 'Стр. крафта вооружения: '
+Missing_Ingredients: У вас нет всех материалов, необходимых для создания этого.
+NoResourcepackMessage1: ' &c&l Скачивание ресурспака...'
+NoResourcepackMessage2: ' &f Примите ресурспак, чтобы увидеть кастомное вооружение'
+Lore_Ammo: '&aБоеприпасы'
+lore_bullets: '&aПатроны'
+Lore_Damage: '&aУрон'
+Lore_Durib: Прочность
+Lore_ingredients: Компоненты
+Lore_Variants: '&7Вариант:'
+Lore_Price: '&6Цена: '
+Lore_DamagePerSecond: '&2Урон в секунду'
+Lore_Crafts: Крафты
+Lore_Returns: Returns
+Reloading_Message: '[Перезарядка...]'
+State_AmmoCount: '[%total%]'
+State_OutOfAmmo: '[Патроны закончились]'
+HotbarMessage: '%name% = %amount%/%max% %state%'
+Kick_message_if_player_denied_request: "&c Вас кикнули, потому что вы не\
+  \ приняли пакет ресурсов. \n&f Если вы хотите снова подключиться к серверу, нажмите кнопку настроить\
+  \ и после кликая на кнопку \"Наборы ресурсов\" установите значение на \"Включено\" или \"Запрашивать\""
+Lore-LMB-Single: §8[ЛКМ] для использования режима одиночного огня
+Lore-LMB-FullAuto: §8[Shift]+[ЛКМ] Для использования автоматического огня
+Lore-RMB-Reload: §8[ПКМ] для перезарядки
+Lore-Ironsights-RMB: §8[ЛКМ] для открытия прицела
+Lore-Ironsights-Sneak: §8[Shift] для открытия прицела
+Lore-Reload-Dropitem: §8[DropItem] для перезарядки
+Lore-Reload-RMB: §8[ПКМ] для перезарядки
+Lore-Helmet-RMB: §8[ПКМ] для того что б одеть шлем.
+Shop_Confirm: '&aВы купили %item% за $%cost%!'
+Resourcepack_InCaseOfCrash: В случае, если ресурспак приведет к сбою вашего клиента, отклоните
+  запрос и введите /qa getResourcepack для получения ресурспака.
+Resourcepack_Download: Скачайте этот ресурспак и включите его, чтобы увидеть пользовательские
+  предметы (Обратите внимание, что загрузка может занять некоторое время)
+Resourcepack_NowBypass: Выполнив эту команду, вы теперь добавлены в белый список
+  ресурспака. Вы больше не должны видеть подсказку
+Resourcepack_NowOptIn: Введя эту команду, вы будете удалены из белого списка.
+  Теперь вы будете получать подсказку для получения ресурспака
+grenadeAlreadyPulled: Вы уже вытащили чеку из гранаты!
+grenadePull: ' В начале вытащите чеку из гранаты...'
+Medkit-FullyHealed: '&fВы полностью исцелены. Сейчас в этом нет необходимости!'
+Medkit-Healing: Исцеление
+Medkit-Bleeding: 'Уровень кровопотери:' # Или скорость
+Medkit-HEALING_HEARTS_AMOUNT: 1.0
+Medkit-HEALING_WEAPPING_DELAY_IN_SECONDS: 6.0
+Medkit-Lore_RMB: '&f[ПКМ] для исцеления себя!'
+Bleeding:
+  Losingconsciousness: '&cВЫ ТЕРЯЕТЕ СОЗНАНИЕ ИЗ-ЗА ПОТЕРИ КРОВИ!'
+  StartBleeding: '&cТЫ ИСТЕКАЕШЬ КРОВЬЮ! НАЙДИ АПТЕЧКУ, ЧТОБЫ ОСТАНОВИТЬ КРОВОТЕЧЕНИЕ!'
+  ProtectedByKevlar: '&aТвой кевларовый жилет защитил тебя от этой пули!'
+gui:
+  prevPage: '&6Предыдущая страница:'
+  nextPage: '&6Следующая страница:'
+AmmoBag:
+  current: '&aПатроны: '
+  type: '&aТип патронов: '
+EntityType:
+  IRON_INGOT: железный слиток
+  REDSTONE: редстоун
+  BLAZE_POWDER: огненный порошок
+  GOLD_INGOT: золотой слиток
+  OAK_PLANKS: дубовые доски
+  WHITE_DYE: белый краситель
+  WHITE_WOOL: белая шерсть
+  TNT: динамит
+  GUNPOWDER: порох
+  BLAZE_ROD: огненные стержни
+  STRING: нитки
+  LEATHER: кожа
+  NETHER_STAR: звезда незера
+  GOLDEN_APPLE: золотое яблоко
+  OBSIDIAN: обсидиан
