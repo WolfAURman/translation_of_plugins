@@ -1,0 +1,101 @@
+# This is the gui configuration file.
+# This file is auto-updated by an internal class of this plugin.
+# File version: 1.8
+
+filler:
+  type: GRAY_STAINED_GLASS_PANE
+  amount: 1
+  name: ''
+farm:
+  delete:
+    type: BARRIER
+    amount: 1
+    name: '&7Подобрать'
+    column: 5
+    row: 5
+    lore:
+    - '&7Нажмите чтобы &c&nподобрать&7 эту ферму.'
+  levels:
+    type: NAME_TAG
+    amount: 1
+    name: '&7Уровни'
+    column: 3
+    row: 1
+    lore:
+    - '&7Нажмите для &e&nредактирования&7 уровня фермы.'
+  type:
+    type: DIAMOND_AXE
+    amount: 1
+    name: '&7Тип'
+    column: 5
+    row: 1
+    lore:
+    - '&7Нажмите для &e&nредактирования&7 типа фермы.'
+  collector:
+    type: HOPPER
+    amount: 1
+    name: '&7Collector'
+    column: 5
+    row: 3
+    lore:
+    - '&7Нажмите, чтобы &e&nустановить&7 сундук в качестве хранилища.'
+    - '&7Если вы хотите удалить его, сломайте сундук.'
+  storage:
+    type: CHEST
+    amount: 1
+    name: '&7Хранилище'
+    column: 7
+    row: 1
+    lore:
+    - '&7Нажмите, чтобы &e&nсобрать&7 все выращиваемые предметы.'
+levels:
+  one:
+    type: DIAMOND_AXE
+    amount: 1
+    name: '&eПервый уровень'
+    column: 3
+    row: 2
+  two:
+    type: DIAMOND_AXE
+    amount: 1
+    name: '&eВторой уровень'
+    column: 4
+    row: 2
+  three:
+    type: DIAMOND_AXE
+    amount: 1
+    name: '&eТретий уровень'
+    column: 5
+    row: 2
+  four:
+    type: DIAMOND_AXE
+    amount: 1
+    name: '&eЧетвёртый уровень'
+    column: 6
+    row: 2
+  five:
+    type: DIAMOND_AXE
+    amount: 1
+    name: '&eПятый уровень'
+    column: 7
+    row: 2
+type:
+  info:
+    type: END_ROD
+    amount: 1
+    name: '&7Положите свой предмет'
+    column: 1
+    row: 1
+    lore:
+    - '&7Положите свой предмет в пустой слот'
+    - '&7После закройте меню нажав кнопку &e&nESC&7.'
+farms:
+  farm:
+    type: END_ROD
+    amount: 1
+    name: '&b&l[ФЕРМА]&e %name%'
+    lore:
+    - '&6Владелец: &7%owner%'
+    - '&6Тип: &7%type%'
+    - ''
+    - '&7&oНажмите для удаления'
