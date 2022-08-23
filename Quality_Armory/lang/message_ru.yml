@@ -20,7 +20,7 @@ Lore_Variants: '&7Вариант:'
 Lore_Price: '&6Цена: '
 Lore_DamagePerSecond: '&2Урон в секунду'
 Lore_Crafts: Крафты
-Lore_Returns: Returns
+Lore_Returns: Отдача
 Reloading_Message: '[Перезарядка...]'
 State_AmmoCount: '[%total%]'
 State_OutOfAmmo: '[Патроны закончились]'
