@@ -11,9 +11,9 @@ Editor:
           Material: CHEST
           Amount: 1
           Durability: 0
-          Name: '&6&lМенеджер ящиков'
+          Name: '&6&lМенеджер контейнеров'
           Lore:
-          - '&eСоздавайте и редактируйте ящики здесь!'
+          - '&eСоздавайте и редактируйте контейнеры здесь!'
           Item_Flags: []
           Unbreakable: false
     Slots: 11
