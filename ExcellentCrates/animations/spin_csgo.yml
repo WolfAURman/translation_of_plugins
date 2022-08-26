@@ -24,7 +24,7 @@ Menu:
             Material: REDSTONE_TORCH
             Amount: 1
             Durability: 0
-            Name: '&c&l» PRIZE «'
+            Name: '&c&l» ПРИЗ «'
             Item_Flags: []
             Unbreakable: false
       Slots: 4,22

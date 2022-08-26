@@ -1,4 +1,4 @@
-Title: '&nCrates Menu'
+Title: '&nМеню контейнеров'
 Size: 36
 
 Crates:
@@ -12,12 +12,12 @@ Crates:
           Lore:
             - '%crate_item_lore%'
             - '&7'
-            - '&9▸ &7You have: &9%user_keys% keys'
-            - '&9▸ &7Money Cost: &9$%crate_opening_cost_money%'
-            - '&9▸ &7Exp Cost: &9%crate_opening_cost_exp%'
+            - '&9▸ &7У вас есть: &9%user_keys% ключ(ей)'
+            - '&9▸ &7Стоимость (монеты): &9$%crate_opening_cost_money%'
+            - '&9▸ &7Стоимость (опыт): &9%crate_opening_cost_exp%'
             - '&7'
-            - '&fLeft Click &7to preview'
-            - '&fRight Click &7to open'
+            - '&fЛКМ &7Для предпросмотра'
+            - '&fПКМ &7Для открытия'
     Slots: 13
 
 Content:
@@ -26,7 +26,7 @@ Content:
       default:
         Item:
           Material: 'BARRIER'
-          Name: '&c&lClose'
+          Name: '&c&lЗакрыть'
     Slots: 31
     Type: CLOSE
 
@@ -35,12 +35,12 @@ Content:
       default:
         Item:
           Material: 'BOOK'
-          Name: '&e&nWhat is it?'
+          Name: '&e&nЧто это?'
           Lore:
-            - '&6This is special crates menu,'
-            - '&6where you can open creates using'
-            - '&6virtual keys, which you can buy'
-            - '&6in our store.'
+            - '&6Это специальное меню контейнеров,'
+            - '&6где вы можете открывать контейнеры с помощью'
+            - '&6виртуальных ключей, которые вы можете купить'
+            - '&6в нашем магазине.'
     Slots: 28
     Type: NONE
 
@@ -49,11 +49,11 @@ Content:
       default:
         Item:
           Material: 'EMERALD'
-          Name: '&a&nStore'
+          Name: '&a&nМагазин'
           Lore:
-            - '&dBuy crate keys in our store'
-            - '&dand use them in this menu!'
+            - '&dКупите ключи от контейнеров в нашем магазине'
+            - '&dпосле используйте их в этом меню!'
             - '&7'
-            - '&bOur Store: &awww.store.mycraft.com'
+            - '&bНаш магазин: &awww.store.mycraft.com'
     Slots: 34
     Type: NONE
