@@ -1,0 +1,156 @@
+Title: '&8&l「 &9Настройки наград &8&l」'
+Size: 54
+
+Content:
+  back:
+    Display:
+      default:
+        Item:
+          Material: BARRIER
+          Name: '&c&lВозврат'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  delete:
+    Display:
+      default:
+        Item:
+          Material: CAULDRON
+          Name: '&c&lУдалить награду'
+          Lore:
+            - '&7Награда будет удалена.'
+            - '&7'
+            - '&c&nУдерживайте Shift для подтверждения.'
+    Slots: 8
+    Type: CRATE_REWARD_DELETE
+
+  name:
+    Display:
+      default:
+        Item:
+          Material: NAME_TAG
+          Name: '&eОтображаемое имя'
+          Lore:
+            - '&bТекущее: &a%reward_name%'
+            - '&7'
+            - '&7Это имя будет использоваться'
+            - '&7в сообщениях.'
+            - '&7'
+            - '&6ЛКМ: &eСменить'
+            - '&6ПКМ: &eУстановить имя предмета'
+    Slots: 19
+    Type: CRATE_REWARD_CHANGE_NAME
+
+  preview:
+    Display:
+      default:
+        Item:
+          Material: ITEM_FRAME
+          Name: '&eПредпросмотр предмета'
+          Lore:
+            - '&bТекущий: &a%reward_preview_name%'
+            - '&7'
+            - '&7Этот предмет будет являться'
+            - '&7наградой в меню и голограммах.'
+            - '&7'
+            - '&e&nИспользуйте предмет с'
+            - '&e&nзаданным названием и описанием.'
+            - '&7'
+            - '&6Поместите предмет: &eДля замены'
+            - '&6ПКМ: &eДля получения предмета'
+    Slots: 20
+    Type: CRATE_REWARD_CHANGE_PREVIEW
+
+  chance:
+    Display:
+      default:
+        Item:
+          Material: REDSTONE
+          Name: '&eШанс выигрыша'
+          Lore:
+            - '&bТекущий: &a%reward_chance%%'
+            - '&7'
+            - '&7Устанавливает шанс того, что это'
+            - '&7вознаграждение будет выбрано.'
+            - '&7'
+            - '&6ЛКМ: &eИзменить'
+    Slots: 21
+    Type: CRATE_REWARD_CHANGE_CHANCE
+
+  item:
+    Display:
+      default:
+        Item:
+          Material: EMERALD
+          Name: '&eПредметы вознаграждения'
+          Lore:
+            - '&7Список пользовательских предметов, которые'
+            - '&7будут выданы игроку при выигрыше.'
+            - '&7'
+            - '&e&nПоложите элементы и используйте ESC'
+            - '&e&nдля сохранения и возврата.'
+            - '&7'
+            - '&6ЛКМ: &eПереход в меню'
+    Slots: 22
+    Type: CRATE_REWARD_CHANGE_ITEMS
+
+  commands:
+    Display:
+      default:
+        Item:
+          Material: COMMAND_BLOCK
+          Name: '&eКоманды вознаграждения'
+          Lore:
+            - '&bСледующие команды будут выполнятся'
+            - '&bкогда игрок выигрывает эту награду:'
+            - '&a%reward_commands%'
+            - '&7'
+            - '&6ЛКМ: &eДобавить команду'
+            - '&6ПКМ: &eОчистить команды'
+    Slots: 23
+    Type: CRATE_REWARD_CHANGE_COMMANDS
+
+  broadcast:
+    Display:
+      default:
+        Item:
+          Material: ENDER_EYE
+          Name: '&eТранслирование'
+          Lore:
+            - '&bАктивно: &a%reward_broadcast%'
+            - '&7'
+            - '&7Устанавливает, должно ли быть'
+            - '&7уведомление на весь сервер,'
+            - '&7когда игрок выиграет эту награду.'
+            - '&7'
+            - '&6ЛКМ: &eВключить/выключить'
+    Slots: 24
+    Type: CRATE_REWARD_CHANGE_BROADCAST
+
+  win_limits:
+    Display:
+      default:
+        Item:
+          Material: REPEATER
+          Name: '&eЛимиты выигрышей'
+          Lore:
+            - '&bКол-во: &a%reward_win_limit_amount%'
+            - '&bКулдаун &a%reward_win_limit_cooldown%'
+            - '&7'
+            - '&7Определяет, как часто'
+            - '&7и/или сколько'
+            - '&7раз игрок может'
+            - '&7выиграть эту награду.'
+            - '&7'
+            - '&eУстановите кулдаун'
+            - '&e&n-1&e для одного раза.'
+            - '&eУстановите кулдаун'
+            - '&e&n0&e для определённого кол-ва.'
+            - '&eУстановите &n-1&e'
+            - '&eдля бесконечного кол-ва.'
+            - '&7'
+            - '&6ЛКМ: &eИзменить кол-во'
+            - '&6ПКМ: &eИзменить кулдаун'
+    Slots: 25
+    Type: CRATE_REWARD_CHANGE_WIN_LIMITS

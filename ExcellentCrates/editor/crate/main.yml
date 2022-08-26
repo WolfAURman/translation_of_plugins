@@ -1,0 +1,263 @@
+Title: '   &8&l「&9Настройки контейнера &8&l」'
+Size: 54
+
+Content:
+  back:
+    Display:
+      default:
+        Item:
+          Material: BARRIER
+          Name: '&c&lВозврат'
+    Slots: 49
+    Type: RETURN
+
+Editor:
+  deletion:
+    Display:
+      default:
+        Item:
+          Material: CAULDRON
+          Name: '&c&lУдалить контейнер'
+          Lore:
+            - '&7Навсегда удаляет этот контейнер.'
+            - '&7'
+            - '&c&nУдерживайте Shift для подтверждения.'
+    Slots: 53
+    Type: CRATE_DELETE
+
+  permission:
+    Display:
+      default:
+        Item:
+          Material: REDSTONE
+          Name: '&eНаличие разрешения'
+          Lore:
+            - '&bАктивно: &a%crate_permission_required%'
+            - '&bРазрешение: &a%crate_permission%'
+            - '&7'
+            - '&7Включает/выключает разрешение на'
+            - '&7открытие этого контейнера.'
+            - '&7'
+            - '&6ЛКМ: &eВключить/Выключить'
+    Slots: 0
+    Type: CRATE_CHANGE_PERMISSION
+
+  rewards:
+    Display:
+      default:
+        Item:
+          Material: EMERALD
+          Name: '&eМеню наград'
+          Lore:
+            - '&7Создавайте и настраивайте'
+            - '&7награды здесь.'
+            - '&7'
+            - '&6ЛКМ: &eОткрыть меню'
+    Slots: 19
+    Type: CRATE_OPEN_REWARDS
+
+  block_effect:
+    Display:
+      default:
+        Item:
+          Material: BLAZE_POWDER
+          Name: '&eЧастицы контейнера'
+          Lore:
+            - '&bТип: &a%crate_block_effect_model%'
+            - '&bНазвание частицы: &a%crate_block_effect_particle_name%'
+            - '&bДанные о частицах: &a%crate_block_effect_particle_data%'
+            - '&7'
+            - '&7Устанавливает эффекты частиц,'
+            - '&7которые будут воспроизводиться вокруг'
+            - '&7блока(ов) контейнера(ов).'
+            - '&7'
+            - '&6ЛКМ: &eПереключение типа частиц'
+            - '&6Shift + ЛКМ: &eИзменить название частицы'
+            - '&6Shift + ПКМ: &eИзменение данных о частицах'
+    Slots: 28
+    Type: CRATE_CHANGE_BLOCK_EFFECT
+
+  npcs:
+    Display:
+      default:
+        Item:
+          Material: PLAYER_HEAD
+          Name: '&eИспользуемые NPC'
+          Lore:
+            - '&c&nУ вас должен быть установлен плагин Citizens'
+            - '&7'
+            - '&7Следующие NPC будут просматривать'
+            - '&7и открывать контейнер по щелчку мыши:'
+            - '&aIDs: %crate_attached_citizens%'
+            - '&7'
+            - '&6ЛКМ: &eДобавить NPC'
+            - '&6ПКМ: &eОчистить список'
+    Slots: 8
+    Type: CRATE_CHANGE_CITIZENS
+
+  key:
+    Display:
+      default:
+        Item:
+          Material: TRIPWIRE_HOOK
+          Name: '&eКлючи'
+          Lore:
+            - '&bСледующие ключи могут быть'
+            - '&bиспользованы для открытия'
+            - '&bэтого контейнера:'
+            - '&a%crate_key_ids%'
+            - '&7'
+            - '&7Устанавливает ключи'
+            - '&7которые могут быть использованы'
+            - '&7чтобы открыть этот контейнер.'
+            - '&7'
+            - '&6ЛКМ: &eДобавить ключ'
+            - '&6ПКМ: &eОтключить ключи'
+    Slots: 15
+    Type: CRATE_CHANGE_KEYS
+
+  name:
+    Display:
+      default:
+        Item:
+          Material: NAME_TAG
+          Name: '&eОтображаемое имя'
+          Lore:
+            - '&bТекущее: &a%crate_name%'
+            - '&7'
+            - '&7Устанавливает имя контейнера'
+            - '&7для отображения в сообщениях чата.'
+            - '&7'
+            - '&6ЛКМ: &eИзменить'
+    Slots: 4
+    Type: CRATE_CHANGE_NAME
+
+  guis:
+    Display:
+      default:
+        Item:
+          Material: PAINTING
+          Name: '&eНастройка анимации открытия и предпросмотра'
+          Lore:
+            - '&bАнимация: &a%crate_animation_config%'
+            - '&bПредпросмотр: &a%crate_preview_config%'
+            - '&7'
+            - '&7Устанавливает макет для контейнера на'
+            - '&7предпросмотр и анимацию открытия'
+            - '&7граф. интерфейсов у контейнеров.'
+            - '&7'
+            - '&6ЛКМ: &eИзменить анимацию'
+            - '&6ПКМ: &eИзменить предпросмотр'
+            - '&6Shift + ПКМ: &eОтключение анимации'
+            - '&6Shift + ЛКМ: &eОтключение предпросмотра'
+    Slots: 11
+    Type: CRATE_CHANGE_CONFIG
+
+  icon:
+    Display:
+      default:
+        Item:
+          Material: ENDER_CHEST
+          Name: '&eОтображение в инвентаре'
+          Lore:
+            - '&bТекущий: &a%crate_item_name%'
+            - '&7'
+            - '&7Настраиваемый предмет в инвентаре'
+            - '&7который можно использовать'
+            - '&7для открытия контейнера.'
+            - '&7Так же используется для'
+            - '&7отображения контейнера в меню.'
+            - '&7'
+            - '&e&nИспользуйте предмет'
+            - '&e&nс изменённым именем и описанием'
+            - '&7'
+            - '&6Поместить сюда: &eЗаменить'
+            - '&6ПКМ: &eПолучить контейнер'
+            - '&6ПКМ в руке: &eОткрыть контейнер'
+    Slots: 13
+    Type: CRATE_CHANGE_ITEM
+
+  block-holo:
+    Display:
+      default:
+        Item:
+          Material: ARMOR_STAND
+          Name: '&eГолограмма над контейнером'
+          Lore:
+            - '&c&nУ вас должен быть плагин на голограммы'
+            - '&c&nDecentHolograms или holographic displays'
+            - '&7'
+            - '&bАктивно: &a%crate_block_hologram_enabled%'
+            - '&bСмещение Y: &a%crate_block_hologram_offset_y%'
+            - '&7'
+            - '&bСледующий текст появится над блоком'
+            - '&bконтейнера при помощи голограммы:'
+            - '&a%crate_block_hologram_text%'
+            - '&7'
+            - '&6ЛКМ: &eДобавить строку'
+            - '&6ПКМ: &eОчистить список'
+            - '&6Shift + ЛКМ: &eПереключение голограммы'
+            - '&6Shift + ПКМ: &eИзменение смещения Y'
+    Slots: 25
+    Type: CRATE_CHANGE_BLOCK_HOLOGRAM
+
+  block-location:
+    Display:
+      default:
+        Item:
+          Material: CHEST
+          Name: '&eОтдача блока & локация'
+          Lore:
+            - '&bОтдача: &a%crate_block_pushback_enabled%'
+            - '&7'
+            - '&bЭтот контейнер будет прикреплен'
+            - '&bк этим блокам в следующих местах:'
+            - '&a%crate_block_locations%'
+            - '&7'
+            - '&6ЛКМ: &eДобавить блок'
+            - '&6ПКМ: &eОчистить блок'
+            - '&6Shift + ЛКМ: &eВключить/выключить отдачу'
+    Slots: 34
+    Type: CRATE_CHANGE_BLOCK_LOCATION
+
+  cooldown:
+    Display:
+      default:
+        Item:
+          Material: CLOCK
+          Name: '&eКулдаун открытия'
+          Lore:
+            - '&bТекущий: &a%crate_opening_cooldown%'
+            - '&7'
+            - '&7Как долго игроку придется ждать'
+            - '&7чтобы снова открыть этот контейнер?'
+            - '&7'
+            - '&eИспользуйте &n-1&e для создания'
+            - '&eодноразового открытия.'
+            - '&eИспользуйте &n0&e для'
+            - '&eотключения кулдауна.'
+            - '&7'
+            - '&6ЛКМ: &eИзменить'
+            - '&6ПКМ: &eСделать одноразовым'
+    Slots: 22
+    Type: CRATE_CHANGE_COOLDOWN
+
+  open_cost:
+    Display:
+      default:
+        Item:
+          Material: GOLD_NUGGET
+          Name: '&eСтоимость открытия'
+          Lore:
+            - '&bЦена: &a%crate_opening_cost_money%'
+            - '&bУровень опыта: &a%crate_opening_cost_exp%'
+            - '&7'
+            - '&7Игроку придется заплатить'
+            - '&7определенное кол-во денег'
+            - '&7и/или уровней опыта'
+            - '&7чтобы открыть этот контейнер.'
+            - '&7'
+            - '&6ЛКМ: &eИзменить цену'
+            - '&6ПКМ: &eИзменить опыт'
+    Slots: 31
+    Type: CRATE_CHANGE_OPEN_COST

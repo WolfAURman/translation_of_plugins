@@ -1,0 +1,35 @@
+Title: '&8&l「&9ExcellentCrates - редактор &8&l」'
+Size: 27
+
+Content: {}
+
+Editor:
+  rewards:
+    Display:
+      default:
+        Item:
+          Material: CHEST
+          Amount: 1
+          Durability: 0
+          Name: '&6&lМенеджер ящиков'
+          Lore:
+          - '&eСоздавайте и редактируйте ящики здесь!'
+          Item_Flags: []
+          Unbreakable: false
+    Slots: 11
+    Type: EDITOR_CRATES
+  
+  effects:
+    Display:
+      default:
+        Item:
+          Material: TRIPWIRE_HOOK
+          Amount: 1
+          Durability: 0
+          Name: '&6&lМенеджер ключей'
+          Lore:
+          - '&eСоздавайте и редактируйте ключи здесь!'
+          Item_Flags: []
+          Unbreakable: false
+    Slots: 15
+    Type: EDITOR_KEYS
