@@ -63,3 +63,26 @@ KickPlayerIfDeniedResourcepack: true
 ![image](https://user-images.githubusercontent.com/93985232/186400366-88f4c7ba-6eda-455f-983e-7aa8a0225eee.png)
 
 ![image](https://user-images.githubusercontent.com/93985232/186400427-e573b41b-e3bb-405d-b3f9-b25a5f4e2e1b.png)
+
+---
+
+- [SilkSpawners [1.8.8 - 1.19.3]](https://www.spigotmc.org/resources/silkspawners-versions-1-8-8-1-19-3.60063/) | spigot
+
+> процент/к-во перевода - 100/100
+
+**Как установить:**
+
+Вам необходимо поместить файл ```messages_ru.properties``` из папки ```SilkSpawners/locale/``` в данном репозитории в папку на сервере по пути ```plugins/SilkSpawners_v2/locale``` а после в конфиге (который находится по пути ```plugins/SilkSpawners_v2/config.yml```) нужно изменить c ```lcoale: en``` на ```lcoale: ru```.
+
+Пример:
+```
+messages:
+  prefix: $8[$bSilkSpawners$8]
+  lcoale: ru # <- Вот тут изменить локаль
+```
+
+Пример перевода:
+
+![изображение](https://user-images.githubusercontent.com/93985232/215294323-8711c0f0-7167-4a11-a30a-69b034ef2ab1.png)
+
+![изображение](https://user-images.githubusercontent.com/93985232/215294338-f9529094-2313-4692-b2cf-28c071390794.png)
