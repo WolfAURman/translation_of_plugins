@@ -4,8 +4,8 @@
 # Если вы хотите использовать головы игроков, вы можете использовать "PLAYER_HEAD:имя_игрока" (например, "PLAYER_HEAD:Notch").
 # Чтобы использовать пользовательские головы игроков, вам нужно значение base64 головы. На сайте minecraft-heads.com вы найдете это значение в разделе "Другое" под "Value:".
 # Чтобы использовать UUID для голов игроков, перейдите на сайт https://sessionserver.mojang.com/session/minecraft/profile/PUT-UUID-HERE и скопируйте значение из поля "value", не включая кавычки.
-# Когда у вас есть значение, вы можете установить тип "значение".
-type = "PLAYER_HEAD:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzM4NmI0NDhjYmU5ZjFkNDE2ZGM1N2Y5YTMwODg1MDg5ODE1YzFmNjcxOGE2NzI1YjkyMTU0MzBjMjIzZWE5ZiJ9fX0=" #"EMERALD_ORE"
+# Когда у вас есть значение, вы можете установить тип "PLAYER_HEAD:значение".
+type = "EMERALD_ORE"
 
 # Еще один способ сослаться на Protection Stones.
 # Может использоваться для /ps give и /ps get
