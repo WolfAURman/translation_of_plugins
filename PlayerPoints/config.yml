@@ -1,122 +1,131 @@
-# The locale to use in the /locale folder
-# Default: en_US
-locale: en_US
+# __________ __                           __________       __        __
+# \______   \  | _____  ___ __  __________\______   \____ |__| _____/  |_  ______
+#  |     ___/  | \__  \<   |  |/ __ \_  __ \     ___/  _ \|  |/    \   __\/  ___/
+#  |    |   |  |__/ __ \\___  \  ___/|  | \/    |  (  <_> )  |   |  \  |  \___ \
+#  |____|   |____(____  / ____|\___  >__|  |____|   \____/|__|___|  /__| /____  >
+#                     \/\/         \/                             \/          \/
 
-# Should we register with Vault as a currency manager?
-# Default: false
+# Это локаль используемая из папки /locale
+# По дефолту: en_US
+locale: ru_RU
+
+# Должны ли мы зарегистрировать  в Vault в качестве плагина управляющего валютой?
+# По дефолту: false
 vault: false
 
-# The priority level to use for the Vault hook
-# Higher priorities will allow PlayerPoints to load before other economy plugins
-# Valid values: [Lowest, Low, Normal, High, Highest]
-# Default: Low
+# Уровень приоритета, который будет использоваться для Vault hook.
+# Более высокие приоритеты позволят PlayerPoints загружаться раньше других экономических плагинов.
+# Допустимые значения: [Lowest, Low, Normal, High, Highest].
+# По дефолту: Low
 vault-priority: Low
 
-# Should we register with Treasury as a currency manager?
-# Default: false
+# Должны ли мы зарегистрироваться в Treasury в качестве плагина управляющего валютой?
+# По дефолту: false
 treasury: false
 
-# The priority level to use for the Treasury hook
-# Higher priorities will allow PlayerPoints to load before other economy plugins
-# Valid values: [LOW, NORMAL, HIGH]
-# Default: LOW
+# Уровень приоритета, который будет использоваться для Treasury hook.
+# Более высокие приоритеты позволят PlayerPoints загружаться раньше других экономических плагинов.
+# Допустимые значения: [LOW, NORMAL, HIGH]
+# По дефолту: LOW
 treasury-priority: LOW
 
-# The number of players to be displayed per page on the leaderboard?
-# Default: 10
+# Какое количество игроков, будет отображаться на одной странице в таблице лидеров?
+# По дефолту: 10
 leaderboard-per-page: 10
 
-# The number of seconds to hold a player's points in cache before being released
-# Default: 30
+# Количество секунд, в течение которых баланс игрока будет храниться в кэше, прежде чем будут освобождены.
+# По дефолту: 30
 cache-duration: 30
 
-# Should we send updates to other servers when a player's points value changes?
-# This should work for any type of proxy
-# Default: true
+# Должны ли мы отправлять обновления на другие серверы, когда значение очков игрока изменяется?
+# Это должно работать для любого типа прокси.
+# По дефолту: true
 bungeecord-send-updates: true
 
-# The number of entries to keep updated in the leaderboard placeholder
-# Only a certain number of leaderboard entries can be available at a time
-# Accessing an entry that does not exist will display a placeholder message instead
-# Default: 10
+# Количество записей, которые будут обновляться в таблице лидеров.
+# Одновременно может быть доступно только определенное количество записей в таблице лидеров.
+# При доступе к несуществующей записи вместо нее будет выводиться сообщение с заголовком.
+# По умолчанию: 10
 leaderboard-placeholder-entries: 10
 
-# The number of seconds between leaderboard placeholder updates
-# Default: 15
+# Количество секунд между обновлениями плейсхолдера таблицы лидеров.
+# По умолчанию: 15
 leaderboard-placeholder-refresh-interval: 15
 
-# The amount of points new players will start with
-# Default: 0
+# Баланс койнов, с которыми будут начинать новые игроки
+# По умолчанию: 0
 starting-balance: 0
 
-# Votifier hook settings
+# Настройки хука для голосования
 vote:
 
-  # If the votifier hook should be enabled
-  # Default: false
+  # Активны ли голосования
+  # По умолчанию: false
   enabled: false
 
-  # How many points should be awarded per vote
-  # Default: 100
+  # Сколько койнов должно быть начислено за голос
+  # По умолчанию: 100
   amount: 100
 
-  # Should points only be awarded when the player who voted is online?
-  # Default: false
+  # Должны ли койны начисляться только тогда, когда проголосовавший игрок находится в сети?
+  # По умолчанию: false
   online: false
 
-# Which command should we redirect to when using '/points' with no subcommand specified?
-# You can use a value here such as 'me' to show the output of '/points me'
-# If you have any aliases defined, do not use them here
-# If left as blank, the default behavior of showing '/points version' with bypassed permissions will be used
-# Default: 
+# На какую команду следует перенаправить при использовании '/points' без указания подкоманды?
+# Вы можете использовать здесь значение, такое как 'me', чтобы показать вывод '/points me'
+# Если у вас есть определенные псевдонимы, не используйте их здесь
+# Если оставить пустым, будет использовано поведение по умолчанию, отображающее версию «/points» с пропущенными разрешениями.
+# По умолчанию:
 base-command-redirect: ''
 
-# Are you upgrading from a much older version of PlayerPoints?
-# If you have done anything special with the database settings previously, you may need this
-# WARNING: This setting may be removed in the future. Try to get your database updated to use the new format!
-legacy-database-mode:
+# Вы обновляете более старую версию PlayerPoints?
+# Если вы ранее делали что-то особенное с настройками базы данных, вам может понадобиться это
+# ПРЕДУПРЕЖДЕНИЕ: этот параметр может быть удален в будущем. Попробуйте обновить базу данных, чтобы использовать новый формат!legacy-database-mode:
 
-  # Should we use legacy database mode?
-  # Default: false
+  # Должны ли мы использовать устаревший режим базы данных?
+  # По умолчанию: false
   enabled: false
 
-  # The name of the legacy database table
-  # Default: playerpoints
+  # Имя устаревшей таблицы базы данных
+  # По умолчанию: playerpoints
   table-name: playerpoints
 
-# Settings for if you want to use MySQL for data management
+# Настройки, если вы хотите использовать MySQL для управления данными
 mysql-settings:
 
-  # Enable MySQL
-  # If false, SQLite will be used instead
-  # Default: false
+  # Активация MySQL
+  # Если false, вместо этого будет использоваться SQLite.
+  # По умолчанию: false
   enabled: false
 
-  # MySQL Database Hostname
+  # MySQL Имя хоста базы данных
   # Default: 
   hostname: ''
 
-  # MySQL Database Port
+  # MySQL порт базы данных
   # Default: 3306
   port: 3306
 
-  # MySQL Database Name
+  # MySQL имя базы данных
   # Default: 
   database-name: ''
 
-  # MySQL Database User Name
+  # MySQL имя пользователя базы данных
   # Default: 
   user-name: ''
 
-  # MySQL Database User Password
+  # MySQL пароль от пользователя
   # Default: 
   user-password: ''
 
-  # If the database connection should use SSL
-  # You should enable this if your database supports SSL
-  # Default: false
+  # Если соединение с базой данных должно использовать SSL
+  # Вы должны включить это, если ваша база данных поддерживает SSL
+  # По умолчанию: false
   use-ssl: false
 
-  # The number of connections to make to the database
-  # Default: 3
+  # Количество подключений к базе данных
+  # По умолчанию: 3
   connection-pool-size: 3
+
+# Это все! Вы достигли конца конфигурации.
+# Наслаждайтесь плагином!
