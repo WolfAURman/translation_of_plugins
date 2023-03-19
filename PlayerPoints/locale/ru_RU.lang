@@ -1,0 +1,120 @@
+# ru_RU translation by WolfAURman
+# Префикс плагина в сообщениях
+prefix: '&7[<g:#E8A230:#ECD32D>PlayerPoints&7] '
+
+# Валюта
+currency-singular: койн
+currency-plural: койнов
+currency-separator: ','
+currency-decimal: .
+number-abbreviation-thousands: к
+number-abbreviation-millions: м
+number-abbreviation-billions: б
+
+# Разное
+no-permission: '&cУ тебя нет на это разрешения!'
+no-console: '&cТолько игроки могут выполнять эту команду.'
+invalid-amount: '&cСумма должна быть целым положительным числом.'
+unknown-player: '&cНе удалось найти игрока: &b%player%'
+unknown-command: '&cНеизвестная команда: &b%input%'
+votifier-voted: '&eСпасибо за голосование на %service%! &b%amount% &eбыл добавлен в ваш баланс.'
+leaderboard-empty-entry: Это можете быть вы!
+
+# Сообщение базовых команд
+base-command-color: '&e'
+base-command-help: '&eИспользуйте &b/points help &eдля получения информации о командах.'
+
+# Помощь по командам
+command-help-description: '&8 - &d/points help &7- Отображает меню помощи. Вы находитесь в нём'
+command-help-title: '&eДоступные команды:'
+
+# Команды выдачи
+command-give-description: '&8 - &d/points give &7- Выдаёт игроку валюту'
+command-give-usage: '&cИспользование: &e/points give <игрок> <сумма>'
+command-give-success: '&b%player% &aвыдал &b%amount% &a%currency%.'
+command-give-received: '&eВы получили &b%amount% &e%currency%.'
+
+# Give All Command
+command-giveall-description: '&8 - &d/points giveall &7- Выдаёт всем онлайн игрокам валюту'
+command-giveall-usage: '&cИспользование: &e/points giveall <сумма> [*]'
+command-giveall-success: '&aВыдано &b%amount% &a%currency% всем онлайн игрокам.'
+
+# Take Command
+command-take-description: '&8 - &d/points take &7- Забрать валюту у игрока'
+command-take-usage: '&cИспользование: &e/points take <игрок> <сумма>'
+command-take-success: '&aЗабрали &b%amount% &a%currency% у игрока &b%player%&a.'
+command-take-lacking-funds: '&b%player% &cне имеет достаточного кол-ва %currency% для этого, поэтому их баланс был установлен на 0.'
+
+# Look Command
+command-look-description: '&8 - &d/points look &7- Просмотр баланса игрока'
+command-look-usage: '&cИспользование: &e/points look <игрок>'
+command-look-success: '&b%player% &eимеет &b%amount% &e%currency%.'
+
+# Pay Command
+command-pay-description: '&8 - &d/points pay &7- Переводит игроку сумму'
+command-pay-usage: '&cИспользование: &e/points pay <игрок> <сумма>'
+command-pay-sent: '&aВы перевели &b%player% %amount% &a%currency%.'
+command-pay-received: '&eВам перевели &b%amount% &e%currency% от &b%player%&e.'
+command-pay-lacking-funds: '&cУ вас недостаточно %currency% для этого.'
+
+# Set Command
+command-set-description: '&8 - &d/points set &7- Установить баланс игрока'
+command-set-usage: '&cИспользование: &e/points set <игрок> <сумма>'
+command-set-success: '&aSet the %currency% of &b%player% &ato &b%amount%&a.'
+
+# Reset Command
+command-reset-description: '&8 - &d/points reset &7- Сбросить баланс игрока'
+command-reset-usage: '&cИспользование: &e/points reset <игрок>'
+command-reset-success: '&aСброс %currency% для &b%player%&a.'
+
+# Me Command
+command-me-description: '&8 - &d/points me &7- Просмотреть свой баланс'
+command-me-usage: '&cИспользование: &d/points me'
+command-me-success: '&eВаш баланс: &b%amount% &e%currency%.'
+
+# Lead Command
+command-lead-description: '&8 - &d/points lead &7- Просмотр таблицы лидеров'
+command-lead-usage: '&cИспользование: &e/points lead [next|prev|#]'
+command-lead-title: '&eLeaderboard &7(Page #%page%/%pages%)'
+command-lead-entry: '&b%position%). &e%player% &7- &6%amount% %currency%'
+
+# Broadcast Command
+command-broadcast-description: '&8 - &d/points broadcast &7- Узнать баланс игрока'
+command-broadcast-usage: '&cИспользование: &e/points broadcast <игрок>'
+command-broadcast-message: '&b%player% &eимеет &b%amount% &e%currency%.'
+
+# Reload Command
+command-reload-description: '&8 - &d/points reload &7- Перезагрузка плагина'
+command-reload-usage: '&cИспользование: &e/points reload'
+command-reload-success: '&aКонфигурация плагина и локали успешно перезагружены.'
+
+# Export Command
+command-export-description: '&8 - &d/points export &7- Экспортирует данные в storage.yml'
+command-export-usage: '&cИспользование: &e/points export'
+command-export-success: '&aДанные были экспортированы в storage.yml.'
+command-export-warning: '&cУведомление: файл storage.yml уже существует. Если вы хотите перезаписать его, используйте &b/points export confirm&c.'
+
+# Import Command
+command-import-description: '&8 - &d/points import &7- Импортирует данные из storage.yml'
+command-import-usage: '&cИспользование: &e/points import'
+command-import-success: '&aДанные были импортированы из storage.yml.'
+command-import-no-backup: '&cНевозможно импортировать, storage.yml не существует. Создайте его командой &b/points export &cи использовать его для передачи данных между типами баз данных.'
+command-import-warning: '&cПримечание: Эта операция удалит все данные из активной базы данных и заменит их содержимым файла storage.yml. &cВ настоящее время активным типом базы данных является &b&o&l%type%&c. &cЕсли вы абсолютно уверены в этом, используйте &b/points import confirm&c.'
+
+# Convert Command
+command-convert-description: '&8 - &d/points convert &7- Загружает данные о валюте из другого плагина'
+command-convert-usage: '&cИспользование: &e/points convert <плагин>'
+command-convert-invalid: '&b%plugin% &cне является конвертируемой валютой плагина.'
+command-convert-success: '&aДанные о валюте из &b%plugin% &aуспешно конвертированы.'
+command-convert-failure: '&cПроизошла ошибка при попытке конвертирования данных. Пожалуйста, проверьте вашу консоль и сообщите о любых ошибках автору плагина PlayerPoints.'
+command-convert-warning: '&cПримечание: Эта операция удалит все данные из активной базы данных и заменит их данными из &b%plugin%&c. &cЕсли вы абсолютно уверены в этом, используйте &b/points convert %plugin% confirm&c.'
+
+# Import Legacy Command
+command-importlegacy-description: '&8 - &d/points importlegacy &7- Импорт устаревшей таблицы'
+command-importlegacy-usage: '&cИспользование: &e/points importlegacy <таблица>'
+command-importlegacy-success: '&aУспешный импорт устаревших данных из &b%table%&a.'
+command-importlegacy-failure: '&cНе удалось импортировать устаревшие данные из &b%table%&c. Существует ли таблица?'
+command-importlegacy-only-mysql: '&cЭта команда доступна только в том случае, если у вас включен MySQL.'
+
+# Version Command
+command-version-description: '&8 - &d/points version &7- Отображение информации о версии PlayerPoints'
