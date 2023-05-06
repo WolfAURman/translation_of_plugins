@@ -1,0 +1,65 @@
+version: 4
+messages:
+  global:
+    prefix: '&5Smooth&dTimber &8||'
+    list-split: '&7, &d'
+    not-allowed: '&7Вам не хватает разрешения &5%permission% &7для использования &5Smooth&dTimber&7!'
+  reload:
+    needed: '&7Обнаружено %type0% изменение, &5перезагрузка %type1%&7...'
+    done: '&7%type% перезагружен &dуспешно!'
+  startup:
+    version:
+      supported: '&7В настоящее время вы используете &dподдерживаемую&7 Minecraft версию &d%minecraft%
+        &7(&5Core %core%&7)'
+      unsupported: '&7В настоящее время вы используете &cустаревшую&7 Minecraft версию
+        &4%minecraft%'
+      need-update: '&7Если вы хотите использовать &5Smooth&dTimber &7вам нужно обновить свой
+        сервер на поддерживаемую версию Minecraft'
+      versions: '&7Поддерживаемые версии: &d%versions%'
+  type:
+    message: сообщение
+    messages: сообщения
+    setting:
+      main: setting
+      addon: addon
+    settings:
+      main: settings
+      addon: addons
+    addon: '%addon% setting'
+    addons: '%addon% settings'
+  time:
+    second: секунда
+    seconds: секунды
+  tools:
+    woodchopper: woodchopper
+  toggle:
+    'on':
+      forever: '&7Вы включили свой &d%tool%&7!'
+      timed: '&7Вы включили свой &d%tool% &7для &5%time%&7!'
+    'off':
+      forever: '&7Вы отключили свой &c%tool%&7!'
+      timed: '&7Вы отключили свой &c%tool% &7для &4%time%&7!'
+    disabled: '&7Переключение отключено!'
+  cooldown:
+    wait: '&7Ваш инструмент все еще включен &dcooldown&7 для &5%time%&7!'
+  command:
+    only:
+      player: '&7Только &5игрок &7может запустить эту команду!'
+    wip: '&7Эта команда находится в стадии разработки!'
+    non-existent: '&7Эта команда не существует! Используйте &5/sm help &7для справки!'
+    missing-permission: '&7У вас недостаточно прав &5%permission% &7для выполнения
+      этой команда!'
+    usage:
+      toggle: '&7/sm toggle (<время>) &8-&7Включить измельчитель деревьев навсегда или
+        на конкретное время в секундах.'
+      help: '&7/sm help &8- &7Список всех команд smoothtimber с их описанием
+        и использованием'
+  abort:
+    message: '&7Вы не можете рубить это дерево, потому что &c%reason%&7!'
+    reason:
+      unknown: другой плагин отменил процесс
+      griefprevention: он защищен GriefPrevetion Claim
+      worldguard: он защищен WorldGuard Region
+      residence: он защищен Residence Region
+      lands: он защищен Lands Region
+      towny: он защищен Towny town

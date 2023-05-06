@@ -1,0 +1,1751 @@
+Generic:
+  Command:
+    Cooldown:
+      Default: '{message: ~prefix: false;}&cТы должен подождать &c%time% &cперед тем как использовать &e%cmd% &cсного.'
+      Onetime: '{message: ~prefix: false;}&cЭта команда одноразовая, и вы уже использовали её.'
+Command:
+  Air:
+    Desc: Просмотр или управление уровнем воздуха игрока.
+    Show:
+      Usage: '[игрок]'
+      Desc: Просмотр оставшегося и максимального уровня воздуха у игрока.
+      Done:
+      - '{message: ~prefix: false;}'
+      - '&6&m            &6&l[ &eВоздух у игрока &a%player_name% &6&l]&6&m            &7'
+      - '&7'
+      - '&e    Оставшийся: &6%air_remaining_ticks% &7(&f%air_remaining_seconds% секунд&7)'
+      - '&e    Максимум: &6%air_maximum_ticks% &7(&f%air_maximum_seconds% секунд&7)'
+      - '&7'
+      - '&7  {json: ~showText: &7Добавьте воздуха игроку.; ~suggestCommand: /air give %player_name% ;}&a&l[Выдать]{end-json}   {json: ~showText: &7Возьмите воздух от игрока.; ~suggestCommand: /air take %player_name% ;}&c&l[Взять]{end-json}   {json: ~showText: &7Установите воздух для игрока.; ~suggestCommand: /air set %player_name% ;}&e&l[Установить]{end-json}   {json: ~showText: &7Сброс воздуха для игрока.; ~runCommand: /air set %player_name% 0;}&d&l[Сброс]{end-json}&7'
+      - '&7'
+      - '&6&m                                              &7'
+    Give:
+      Desc: Дайте воздух игроку.
+      Usage: '[игрок] <тип> <кол-во>'
+      Done: '{message: ~prefix: false;}&eВыдано &a%amount% &eвоздуха игроку &6%player_name%&e. Air Level: &6%air_remaining_ticks%&e/&6%air_maximum_ticks%&e.'
+      Target: '#ffeea2Added #fdba5e%amount%#ffeea2 air ticks to #fdba5e%player_name%#ffeea2. New air ticks: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+      Notify: '<! type:"action_bar" !>#ffeea2You got #fdba5e%amount%#ffeea2 air ticks: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+    Take:
+      Desc: Забирайте воздух у игрока.
+      Usage: '[игрок] <тип> <кол-во>'
+      Done: '{message: ~prefix: false;}&eВзято &c%amount% &eвоздуха от игрока &6%player_name%&e. Air Level: &6%air_remaining_ticks%&e/&6%air_maximum_ticks%&e.'
+      Target: '#ffeea2Removed #fdba5e%amount%#ffeea2 air ticks from #fdba5e%player_name%#ffeea2. New air ticks: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+      Notify: '<! type:"action_bar" !>#ffeea2You lost #fdba5e%amount%#ffeea2 air ticks: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+    Set:
+      Desc: Установите воздух для игрока.
+      Usage: '[игрок] <тип> <кол-во>'
+      Done: '{message: ~prefix: false;}&eУстановленно &6%amount% &eвоздуха игроку &6%player_name%&e. Air Level: &6%air_remaining_ticks%&e/&6%air_maximum_ticks%&e.'
+      Target: '#ffeea2Set #fdba5e%amount%#ffeea2 air ticks for #fdba5e%player_name%#ffeea2. New air ticks: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+      Notify: '<! type:"action_bar" !>#ffeea2Your air ticks set to #fdba5e%amount%#ffeea2: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+    Usage: <action> <amount> [player] [-max] [-s]
+  Anvil:
+    Desc: Открытая переносная наковальня.
+    Usage: '[игрок]'
+    Done:
+      Others: '{message: ~prefix: false;}&eОткрыта переносная наковальня для &6%player_name%&e.'
+    Target: '#ffeea2Opened portable anvil for #fdba5e%player_name%#ffeea2.'
+    Notify: <! type:"action_bar" !>#ffeea2You opened portable anvil.
+  Armor:
+    Desc: Просмотр снаряжения игрока или управление им.
+    Usage: <игрок>
+  Back:
+    Desc: Возврат к предыдущему местоположению.
+    Usage: '[игрок]'
+    Error:
+      Empty: '{message: ~prefix: false; ~type: ACTION_BAR; ~sound: ENTITY_VILLAGER_NO;}&cУ тебя нет предыдущего местоположения.'
+      Nothing: <! type:"action_bar" sound:"ENTITY_VILLAGER_NO" !>#fd5e5eYou don't have back location.
+    Notify: '{message: ~prefix: false; ~type: ACTION_BAR; ~sound: ENTITY_ENDERMAN_TELEPORT;}&eТы вернулся на свое прежнее место.'
+    Done: '&eИгрок &6%player_name%&e телепортировался в свое предыдущее местоположение.'
+    Target: '#ffeea2Player #fdba5e%player_name%#ffeea2 teleported to his previous location.'
+  Broadcast:
+    Desc: Общее сообщение.
+    Usage: <сообщение>
+    Format: '{message: ~prefix: false;}&6[&eОбщее сообщение&6] &c%msg%'
+  Burn:
+    Desc: Зажигайте игрока на определенное время.
+    Usage: <игрок> <время>
+    Done: '{message: ~prefix: false;}&eИгрок &6%player_name% &eвоспламенился на &6%time% &eсекунд.'
+  ClearChat:
+    Desc: Очистить чат.
+    Done: '{message: ~prefix: false;}&7Чат был очищен игроком &a%player%&7.'
+  ClearInventory:
+    Desc: Очистите свой собственный или инвентарь другого игрока.
+    Usage: '[игрок]'
+    Done: '{message: ~prefix: false; ~sound: BLOCK_FIRE_EXTINGUISH;}&eОчистин инвентарь &6%player_name%'
+    Notify: '{message: ~prefix: false; ~type: ACTION_BAR; ~sound: BLOCK_FIRE_EXTINGUISH;}&eВащ инвентарь был очищен!'
+  CText:
+    Invalid: '{message: ~prefix: false;}&7TXT файл &c%file% &7не найден!'
+  Condense:
+    Desc: Уплотняйте элементы в блоки.
+    Error:
+      Nothing: '{message: ~prefix: false;}&cНечего уплотнять.'
+      NotEnough: '{message: ~prefix: false;}&cНедостаточно элементов для преобразования &e%item_from% &cдля &e%item_result%&c. Нужно хотя бы &e%amount%&c.'
+    Done: '{message: ~prefix: false;}&eПреобразованный &ax%amount_from% %item_from% &eк &ax%amount_result% %item_result%'
+    Usage: ''
+  DeathBack:
+    Desc: Возвращение к месту смерти.
+    Usage: '[игрок]'
+    Error:
+      Empty: '{message: ~prefix: false; ~type: ACTION_BAR; ~sound: ENTITY_VILLAGER_NO;}&cНет местоположении смерти.'
+      Nothing: <! type:"action_bar" sound:"ENTITY_VILLAGER_NO" !>#fd5e5eYou don't have death location.
+    Notify: '{message: ~prefix: false; ~type: ACTION_BAR; ~sound: ENTITY_ENDERMAN_TELEPORT;}&eТы вернулся к месту твоей смерти.'
+    Done: '&eИгрок &6%player_name%&e телепортировался в место своей смерти.'
+    Target: '#ffeea2Player #fdba5e%player_name%#ffeea2 teleported to his death location.'
+  Disposal:
+    Usage: '[игрок]'
+    Desc: Открыто меню утилизации.
+    Done: '&eОткрыто меню утилизации для &6%player_name%&e.'
+    Target: '#ffeea2Opened disposal for #fdba5e%player_name%#ffeea2.'
+    Notify: <! type:"action_bar" sound:"ITEM_ARMOR_EQUIP_LEATHER" !>#ffeea2You opened disposal.
+  Enchant:
+    Desc: Зачаровать предмет в руке.
+    Usage: '[игрок] <слот> <зачарование> <ЛВЛ>'
+    Done:
+      Enchanted: '{message: ~prefix: false; ~sound: BLOCK_ENCHANTMENT_TABLE_USE;}&eЗачарование предмета &6%item%&e с &6%enchantment% %level%&e в инвентаре &6%player_name%&e в &6%slot%&e слоту!'
+      Disenchanted: '{message: ~prefix: false; ~sound: BLOCK_GRINDSTONE_USE;}&eЗачарование &6%enchantment% &eбыло разачарованно( &6%item%&e в инвентаре &6%player_name%&e в &6%slot%&e слоту.'
+    Notify:
+      Enchanted: '{message: ~prefix: false; ~sound: BLOCK_ENCHANTMENT_TABLE_USE;}&eТвой &6%item% &eбыл зачарован на &6%enchantment% %level%&e!'
+      Disenchanted: '{message: ~prefix: false; ~sound: BLOCK_GRINDSTONE_USE;}&eТвой &6%item% &eбыл разачарованн( на зачарование &6%enchantment%&e.'
+    Enchanted:
+      Target: '<! sound:"BLOCK_ENCHANTMENT_TABLE_USE" !>#ffeea2Enchanted #fdba5e%item%#ffeea2 with #fdba5e%name% %amount%#ffeea2 in #fdba5e%player_name%#ffeea2''s #fdba5e%type%#ffeea2 slot!'
+      Notify: '<! sound:"BLOCK_ENCHANTMENT_TABLE_USE" !>#ffeea2Your #fdba5e%item%#ffeea2 have been enchanted with #fdba5e%name% %amount%#ffeea2!'
+    Disenchanted:
+      Target: '<! sound:"BLOCK_GRINDSTONE_USE" !>#ffeea2Enchantment #fdba5e%name%#ffeea2 have been removed from #fdba5e%item%#ffeea2 in #fdba5e%player_name%#ffeea2''s #fdba5e%type%#ffeea2 slot.'
+      Notify: '<! sound:"BLOCK_GRINDSTONE_USE" !>#ffeea2Your #fdba5e%item%#ffeea2 have been disenchanted from #fdba5e%name% %amount%#ffeea2!'
+  Enchanting:
+    Desc: Открыт переносной стол зачарований.
+    Usage: '[player] [-s]'
+    Notify: <! type:"action_bar" !>#ffeea2You opened enchanting table.
+    Target: '#ffeea2Opened enchanting table for #fdba5e%player_name%#ffeea2.'
+  Enderchest:
+    Desc: Открыт переносной сундук Эндера.
+    Usage: '[игрок]'
+    Clear:
+      Desc: Очистите свой собственный эндер сундук или сундук другого игрока.
+      Usage: '[игрок]'
+      Done:
+        Others: '{message: ~sound: BLOCK_FIRE_EXTINGUISH;}Очищен эндер сундук игрока &e%player_name%&7'
+        Executor: '{message: ~type: ACTION_BAR; ~sound: BLOCK_FIRE_EXTINGUISH;}&7[&bЭндер Сундук очищен&7]'
+        Notify: '{message: ~sound: BLOCK_FIRE_EXTINGUISH;}Твой сундук Эндера был очищен игроком &e%player_name%&7!'
+        Target: '<! sound:"BLOCK_FIRE_EXTINGUISH" !>#ffeea2Cleared #fdba5e%player_name%#ffeea2''s ender chest!'
+    Copy:
+      Desc: Скопируйте инвентарь игрока.
+      Usage: <от> [к]
+      Done:
+        Executor: '{message: ~sound: ITEM_ARMOR_EQUIP_LEATHER;}Скопирован эндер сундук &e%player_name%&'
+        Others: '{message: ~sound: ITEM_ARMOR_EQUIP_LEATHER;}Скопирован эндер сундук игрока &e%player_from_name%&7 к игроку &e%player_to_name%&7.'
+    Fill:
+      Desc: Заполните сундук эндера игрока указанными предметами.
+      Usage: <игрок> <предмет>
+      Done:
+        Executor: '{message: ~sound: ENTITY_ITEM_PICKUP;}Сундук эндера игрока &e%player_name%&7 заполнен &e%item_name%&7.'
+    Open:
+      Desc: Откройте сундук эндера изменяемого игрока.
+      Usage: <игрок>
+      Done:
+        Executor: '{message: ~sound: BLOCK_CHEST_OPEN;}Открыт сундук Эндера &e%player_name%'
+        Offline: '{message: ~sound: BLOCK_CHEST_CLOSE;}Сундук Эндера сохранён в автономном режиме игрока &e%player_name%.'
+      Error:
+        Offline:
+          Joined: '{message: ~sound: ENTITY_VILLAGER_NO;}&cИзменения в сундуке Эндера не будут быть сохраненным, потому что игрок сейчас находится в сети. Используйте эту команду еще раз.'
+    Repair:
+      Desc: Repair all items in [player's] ender chest.
+      Usage: '[player] [-s]'
+      Notify: <! sound:"BLOCK_ANVIL_USE" !>#ffeea2All items in your ender chest has been repaired!
+      Target: '<! sound:"BLOCK_ANVIL_USE" !>#ffeea2Repaired all items in #fdba5e%player_name%#ffeea2''s ender chest!'
+  Exp:
+    Desc: Просмотр очков опыта игрока или управление ими.
+    Show:
+      Desc: Просмотр очков опыта игрока.
+      Usage: '[игрок]'
+      Done:
+      - '{message: ~prefix: false;}'
+      - '&6&m            &6&l[ &eОпыт у &a%player_name% &6&l]&6&m            &7'
+      - '&7'
+      - '&e    ЛВЛ: &6%exp_level% &7(&f%exp_progress%% of the next level&7)'
+      - '&e    Кол-во опыта до следующего ЛВЛ: &6%exp_required%'
+      - '&e    Общий Опыт: &6%exp_total%'
+      - '&7'
+      - '&7  {json: ~showText: &7Добавить опыт игроку.; ~suggestCommand: /exp give %player_name% ;}&a&l[Выдать]{end-json}   {json: ~showText: &7Возьмите опыт от игрока.; ~suggestCommand: /exp take %player_name% ;}&c&l[Взять]{end-json}   {json: ~showText: &7Установите опыт для игрока.; ~suggestCommand: /exp set %player_name% ;}&e&l[Установить]{end-json}   {json: ~showText: &7Сброс опыта для игрока.; ~runCommand: /exp set %player_name% EXP 0;}&d&l[Сброс]{end-json}&7'
+      - '&7'
+      - '&6&m                                              &7'
+    Give:
+      Desc: Дайте опыт игроку.
+      Usage: '[игрок] <тип> <кол-во>'
+      Done: '{message: ~prefix: false;}&eВыдать &a%amount% &eопыта/уровней игроку &6%player_name%&e. Level: &6%exp_level%&e, Exp: &6%exp_total%&e.'
+      Target: '#ffeea2Added #fdba5e%amount%#ffeea2 exp/levels to #fdba5e%player_name%#ffeea2. XP: #fdba5e%total%#ffeea2, Level: #fdba5e%level%#ffeea2.'
+      Notify: '#ffeea2You got #fdba5e%amount%#ffeea2 exp/levels: #fdba5e%total%#ffeea2 XP, #fdba5e%level%#ffeea2Level(s).'
+    Take:
+      Desc: Забрать опыт у игрока.
+      Usage: '[игрок] <тип> <кол-во'
+      Done: '{message: ~prefix: false;}&eЗабрал &c%amount% &eопыта/уровней от &6%player_name%&e. Level: &6%exp_level%&e, Exp: &6%exp_total%&e.'
+      Target: '#ffeea2Removed #fdba5e%amount%#ffeea2 exp/levels from #fdba5e%player_name%#ffeea2. XP: #fdba5e%total%#ffeea2, Level: #fdba5e%level%#ffeea2.'
+      Notify: '#ffeea2You lost #fdba5e%amount%#ffeea2 exp/levels: #fdba5e%total%#ffeea2 XP, #fdba5e%level%#ffeea2Level(s).'
+    Set:
+      Desc: Установите опыт для игрока.
+      Usage: '[игрок] <тип> <кол-во>'
+      Done: '{message: ~prefix: false;}&eУстановил &6%amount% &eопыта/уровней игроку &6%player_name%&e. Level: &6%exp_level%&e, Exp: &6%exp_total%&e.'
+      Target: '#ffeea2Set #fdba5e%amount%#ffeea2 exp/levels for #fdba5e%player_name%#ffeea2. XP: #fdba5e%total%#ffeea2, Level#fdba5e%level%#ffeea2.'
+      Notify: '#ffeea2Your exp/level set to #fdba5e%amount%#ffeea2: #fdba5e%total%#ffeea2 XP, #fdba5e%level%#ffeea2Level(s).'
+    Usage: <action> <amount> [player] [-s] [-l]
+  Extinguish:
+    Desc: Потушите себя или указанного игрока.
+    Usage: '[игрок]'
+    Notify: '{message: ~prefix: false; ~type: ACTION_BAR; ~sound: BLOCK_FIRE_EXTINGUISH;}&eТы был потушен.'
+    Done: '{message: ~prefix: false; ~sound: BLOCK_FIRE_EXTINGUISH;}&eИгрок &6%player_name% &eбыл потушен.'
+    Target: '<! sound:"BLOCK_FIRE_EXTINGUISH" !>#ffeea2Player #fdba5e%player_name%#ffeea2 have been extinguished.'
+  Feed:
+    Desc: Восстановите голод.
+    Usage: '[игрок]'
+    Done:
+      Self: '{message: ~prefix: false;}&7Вы перекусили!'
+      Others: '{message: ~prefix: false;}&7Игрок &e%player%&7 покушал!'
+  Fly:
+    Desc: Переключение режима полета.
+    Usage: '[игрок] [0/1]'
+    Done: '{message: ~prefix: false;}&eРежим полета для &6%player_name%&e: &6%state%&e.'
+    Notify: '{message: ~prefix: false;}&eРежим полета: &6%state%&e.'
+    Error:
+      BadWorld: '{message: ~prefix: false;}&cПолеты здесь запрещены!'
+    Target: '#ffeea2Set flying for #fdba5e%player_name%#ffeea2 to #fdba5e%state%#ffeea2.'
+  GameMode:
+    Desc: Изменить режим игры.
+    Usage: '[игрок] <режим>'
+    Notify: '{message: ~prefix: false;}&eРежим игры: &6%gamemode%&e.'
+    Done: '{message: ~prefix: false;}&eРежим игры у &6%player_name%&e сменян на: &6%gamemode%&e.'
+    Target: '#ffeea2Set #fdba5e%type%#ffeea2 game mode for #fdba5e%player_name%#ffeea2.'
+  Give:
+    Desc: Выдать указанный предмет игроку.
+    Usage: <игрок> <предмет> [кол-во]
+    Done: '{message: ~prefix: false; ~sound: ENTITY_ITEM_PICKUP;}&eВыдано &6x%amount% %item% &eигроку &6%player_name%&e.'
+    Notify: '{message: ~prefix: false; ~sound: ENTITY_ITEM_PICKUP;}&eВы получили &6x%amount% %item%&e.'
+  God:
+    Desc: Режим Бога.
+    Usage: '[игрок] [0/1]'
+    Damage:
+      Notify:
+        Out: '{message: ~prefix: false; ~type: ACTION_BAR;}&cВы не можете нанести урон в режиме Бога!'
+    Toggle:
+      Notify: '{message: ~prefix: false;}&eРежим Бога: &6%state%&e.'
+      Done: '{message: ~prefix: false;}&eРежим Бога для &6%player%&e: &6%state%&e.'
+      Target: '#ffeea2Set God Mode #fdba5e%state%#ffeea2 for #fdba5e%player_name%#ffeea2.'
+    Error:
+      World: '{message: ~prefix: false;}&cРежим Бога отключён!'
+    Notify:
+      DamageDisabled: <! type:"action_bar" !>#fd5e5eYou can't inflict damage in God Mode!
+      BadWorld: '#fd5e5eWarning: #ffeea2God Mode is disabled in this world!'
+  Hat:
+    Desc: Переложите предмет, который вы держите в руке, в свою голове.
+    Done: '{message: ~prefix: false; ~type: ACTION_BAR; ~sound: ITEM_ARMOR_EQUIP_LEATHER;}&eНаслаждайся твоей новой шляпа :)'
+  Heal:
+    Desc: Восстановить здоровье.
+    Usage: '[игрок]'
+    Done:
+      Self: '{message: ~prefix: false;}&7Вы были исцелены!'
+      Others: '{message: ~prefix: false;}&e%player% &7был исцелён!'
+    Notfiy: '#ffeea2You have been healed!'
+    Target: '#ffeea2Player #fdba5e%player_name%#ffeea2 has been healed.'
+  Inventory:
+    Desc: Просмотр инвентаря игрока и управление им.
+    Usage: <игроки>
+    Clear:
+      Desc: Очистите свой собственный инвентарь или инвентарь другого игрока.
+      Usage: '[игрок]'
+      Done:
+        Others: '{message: ~sound: BLOCK_FIRE_EXTINGUISH;}Очищен инвентарь &e%player_name%&7''s &e%player_name%&7'
+        Executor: '{message: ~type: ACTION_BAR; ~sound: BLOCK_FIRE_EXTINGUISH;}&7[&bИнвентарь Очищен&7]'
+        Notify: '{message: ~sound: BLOCK_FIRE_EXTINGUISH;}Ваш инвентарь был очищен игроком &e%player_name%&7!'
+        Target: '<! sound:"BLOCK_FIRE_EXTINGUISH" !>#ffeea2Cleared #fdba5e%player_name%#ffeea2''s inventory!'
+    Copy:
+      Desc: Скопируйте инвентарь игрока.
+      Usage: <от> [к]
+      Done:
+        Executor: '{message: ~sound: ITEM_ARMOR_EQUIP_LEATHER;}Скопирован инвентарь &e%player_name%&7.'
+        Others: '{message: ~sound: ITEM_ARMOR_EQUIP_LEATHER;}Скопирован инвентарь &e%player_from_name%&7''s игрока &e%player_from_name%&7 к игроку &e%player_to_name%&7.'
+        Notify: '<! sound:"ITEM_ARMOR_EQUIP_LEATHER" !>#ffeea2Copied #fdba5e%player_name%#ffeea2''s inventory.'
+        Target: '<! sound:"ITEM_ARMOR_EQUIP_LEATHER" !>#ffeea2Copied #fdba5e%source%#ffeea2''s inventory to #fdba5e%target%#ffeea2.'
+    Fill:
+      Desc: Заполните инвентарь игрока указанными предметами.
+      Usage: <игрок> <предмет>
+      Done:
+        Executor: '{message: ~sound: ENTITY_ITEM_PICKUP;}Инвентарь &e%player_name%&7 был заполнен &e%item_name%&7.'
+    Open:
+      Desc: Откройте изменяемый инвентарь игрока.
+      Usage: <игрок>
+      Done:
+        Executor: '{message: ~sound: BLOCK_CHEST_OPEN;}Открыт инвентарь &e%player_name%&7'
+        Offline: '{message: ~sound: BLOCK_CHEST_CLOSE;}Инвентарь &e%player_name%&7 Сохранён в автономном режиме'
+      Error:
+        Offline:
+          Joined: '{message: ~sound: ENTITY_VILLAGER_NO;}&cИзменения в инвентаре не могут быть сохраненным, потому что игрок сейчас находится в сети. Используйте эту команду еще раз.'
+    Repair:
+      Desc: Repair all items in [player's] inventory.
+      Usage: '[player] [-s]'
+      Notify: <! sound:"BLOCK_ANVIL_USE" !>#ffeea2All items in your inventory has been repaired!
+      Target: '<! sound:"BLOCK_ANVIL_USE" !>#ffeea2Repaired all items in #fdba5e%player_name%#ffeea2''s inventory!'
+  Ignore:
+    Desc: Добавление/Удаление игрока (игроков) в/из черного списка.
+    Usage: '[игрок]'
+    Done: '{message: ~prefix: false;}&7Игрок &e%player% &7добавлен в черный список. Вы можете изменить настройки или разблокировать его с помощью &e/ignore'
+    Error:
+      Already: '{message: ~prefix: false;}&cТы уже игнорируешь &e%player%&c.'
+      Bypass: '{message: ~prefix: false;}&cВы не можете игнорировать &e%player%&c!'
+    Add:
+      Desc: Add player to your blacklist.
+      Usage: <player>
+      Done: '#ffeea2Player #fd5e5e%player_name%#ffeea2 added to the blacklist. You can change settings or unblock him using #fd5e5e/ignore list'
+      Error:
+        AlreadyIn: '#ffeea2Player is already blacklisted.'
+    Remove:
+      Desc: Remove player from blacklist.
+      Usage: <player>
+      Done: '#ffeea2Player #fdba5e%player_name%#ffeea2 has ben removed from the blacklist.'
+      Error:
+        NotIn: '#ffeea2Player is not blacklisted.'
+    List:
+      Desc: View your player blacklist.
+      Usage: ''
+  Item:
+    Desc: Получить указанный элемент.
+    Usage: <предмет> [кол-во]
+    Done: '{message: ~prefix: false;}&7Вы получили &e%amount% %item%&7.'
+    Error:
+      Material: '&c%name%&7 не является допустимым материалом!'
+    Amount:
+      Desc: Измените количество предмета
+      Usage: <кол-во>
+      Done: '{message: ~sound: ENTITY_ITEM_PICKUP;}Установленно &ex%item_amount%&7 &e%item_name%&7!'
+    Enchant:
+      Desc: Зачаровывать предмет в руке.
+      Usage: <зачарование> <лвл>
+      Done:
+        Enchanted: '{message: ~sound: BLOCK_ENCHANTMENT_TABLE_USE;}&e%item_name%&7 зачарован на &e%enchantment_name% %enchantment_level%&7!'
+        Disenchanted: '{message: ~sound: UI_STONECUTTER_TAKE_RESULT;}Зачарование &e%enchantment_name%&7 снято с &e%item_name%&7!'
+    Flag:
+      Desc: Добавление или удаление флагов элементов.
+      Add:
+        Desc: Добавьте указанный флаг к элементу.
+        Usage: <флаг элемента>
+        Done: '{message: ~sound: BLOCK_ANVIL_USE;}Добавлен &e%item_flag%&7 флаг на предмет!'
+      Remove:
+        Desc: Удалите указанный флаг из элемента.
+        Usage: <флаг элемента>
+        Done: '{message: ~sound: BLOCK_ANVIL_USE;}Удалён &e%item_flag%&7 флаг с предмета.'
+      Clear:
+        Desc: Очистить флаги элементов.
+        Done: '{message: ~sound: BLOCK_ANVIL_USE;}Флаги элементов сняты!'
+      Usage: '[help]'
+    Get:
+      Desc: Получите указанный предмет
+      Usage: <материал> [кол-во]
+      Done: '{message: ~sound: ENTITY_ITEM_PICKUP;}Ты получил &ex%item_amount%&7 &e%item_type%&7!'
+    Give:
+      Desc: Выдайте указанный предмет игроку.
+      Usage: <игрок> <предмет> [кол-во]
+      Done: '{message: ~sound: ENTITY_ITEM_FRAME_ADD_ITEM;}Вы выдали &ex%item_amount%&7 &e%item_type%&7 игроку &e%player_name%&7!'
+      Notify: '{message: ~sound: ENTITY_ITEM_PICKUP;}&e%item_sender%&7 выдал вам &ex%item_amount%&7 &e%item_type%&7!'
+    Take:
+      Desc: Возьмите указанный предмет у игрока.
+      Usage: <игрок> <предмет> [кол-во]
+      Done: '{message: ~sound: ENTITY_ITEM_FRAME_REMOVE_ITEM;}Ты взял &ex%item_amount%&7 &e%item_type%&7 у игрока &e%player_name%&7!'
+      Error:
+        NotEnough: '{message: ~sound: ENTITY_VILLAGER_NO;}&cНе удалось взять предмет(ы) Игроку не хватает &e%item_type%s &4(&c%item_has%&4/&c%item_amount%&4)&c!'
+      Notify: '{message: ~sound: ENTITY_ITEM_FRAME_REMOVE_ITEM;}&e%item_sender%&7 взял &ex%item_amount%&7 &e%item_type%&7 у вас!'
+    Lore:
+      Desc: Измените описание предмета.
+      Add:
+        Desc: Добавьте новую строку в описание предмета.
+        Usage: <текст> [позиция]
+        Done: '{message: ~sound: BLOCK_ANVIL_USE;}Добавлена новая строка в описание предмета!'
+      Remove:
+        Desc: Удалите строку из описание предмета.
+        Usage: <позиция>
+        Done: '{message: ~sound: BLOCK_ANVIL_USE;}Удалена строка из описания предмета'
+      Clear:
+        Desc: Удалите описание предмета.
+        Done: '{message: ~sound: BLOCK_ANVIL_USE;}Описание предмета очищенно!'
+      Usage: '[help]'
+    Model:
+      Desc: Изменение данных модели элемента.
+      Usage: <данные модели>
+      Done: '{message: ~sound: BLOCK_ANVIL_USE;}Установленно &e%item_model%&7 как данные для модели &e%item_name%&7!'
+    Name:
+      Desc: Измените отображаемое имя предмета.
+      Usage: <имя>
+      Done:
+        Changed: '{message: ~sound: BLOCK_ANVIL_USE;}Изменено название предмета!'
+        Reset: '{message: ~sound: BLOCK_ANVIL_USE;}Имя предмета восстановлено по умолчанию.'
+    Spawn:
+      Desc: Получите указанный предмет
+      Usage: <материал> <кол-во> [мир] [x] [y] [z]
+      Done: '{message: ~sound: ENTITY_ITEM_PICKUP;}Созданн &ex%item_amount% %item_name%&7 на &e%item_x%&7, &e%item_y%&7, &e%item_z%&7 в &e%item_world%&7!'
+    Damage:
+      Desc: Change item's damage'.
+      Usage: '[amount]'
+      Done: '<! sound:"BLOCK_ANVIL_USE" !>#ffeea2Set #fdba5e%item%#ffeea2 damage to #fdba5e%amount%#ffeea2.'
+      Error:
+        NotDamageable: <! sound:"ENTITY_VILLAGER_NO" !>#fdba5e%item%#fd5e5e can not be damaged.
+    Potion:
+      Error:
+        NotAPotion: '#fd5e5eYou must hold a potion!'
+        InvalidEffect: '#fd5e5eInvalid effect!'
+      Add:
+        Desc: Add effect to a potion.
+        Usage: <effect> <amplifier> <duration>
+        Done: '#ffeea2Potion effect added!'
+  ItemName:
+    Desc: Изменить имя элемента.
+    Usage: <имя>
+    Done: '{message: ~prefix: false;}&7Предмет переименован!'
+  ItemLore:
+    Desc: Измените описание о предмета.
+    Usage: добавить|удалить|очистить
+    Done: '{message: ~prefix: false;}&7Описание сменянно!'
+  List:
+    Desc: Показать онлайн-игроков и ранги.
+  Me:
+    Desc: Показывать действия в чате.
+    Usage: <действие>
+  Mobkill:
+    Desc: Убивайте определенных мобов.
+    Usage: <тип>
+    Done:
+      Type: '{message: ~prefix: false;}&7Убито &a%amount% %type%&7!'
+      All: '{message: ~prefix: false;}&7Убито &a%amount% &7mobs!'
+  More:
+    Desc: Увеличьте количество предметов в раздаче.
+  Near:
+    Desc: Показать ближайших игроков.
+    Error:
+      None: '{message: ~prefix: false;}&7В радиусе &e%radius% блоков нет игроков&7.'
+      Nothing: '#ffeea2There are no players in radius of #fdba5e%radius%#ffeea2 blocks.'
+    Usage: ''
+  Nick:
+    Desc: Изменение отображаемого имени.
+    Usage: '[Ник]'
+    Done:
+      Others: '{message: ~prefix: false;}&e%player% &7сменил ник на &e%nick%&7.'
+      Self: '{message: ~prefix: false;}&7Ваш ник изменился на &e%nick%&7.'
+    Error:
+      Blacklisted: '{message: ~prefix: false;}&cНик содержит запрещенные слова.'
+      Long: '{message: ~prefix: false;}&cНик не может быть длиннее, чем &e20 букв&c.'
+      Short: '{message: ~prefix: false;}&cНик не может быть короче, чем &e3 буквы&c.'
+      BadWords: '#fd5e5eNick contains forbidden words.'
+      Regex: '#fd5e5eNick contains disallowed characters.'
+      TooLong: '#fd5e5eNick can be no longer than #fdba5e%amount%#fd5e5e characters.'
+      TooShort: '#fd5e5eNick must contain at least #fdba5e%amount%#fd5e5e characters.'
+    Clear:
+      Desc: Remove [player's] custom nick.
+      Usage: '[player] [-s]'
+      Target: '#ffeea2Removed custom nick for #fdba5e%player_name%#ffeea2.'
+      Notify: '#ffeea2You custom nick has been removed.'
+    Set:
+      Desc: Set custom nick for a player.
+      Usage: <player> <nick> [-s]
+      Target: '#ffeea2Set #fdba5e%name%#ffeea2 as custom nick for #fdba5e%player_name%#ffeea2.'
+      Notify: '#ffeea2Your custom nick has been set to #fdba5e%name%#ffeea2.'
+    Change:
+      Desc: Change your custom nick.
+      Usage: <nick>
+      Done: '#ffeea2Set custom nick to #fdba5e%name%#ffeea2.'
+  NoPhantom:
+    Desc: Переключение фантомных атак.
+    Usage: '[0/1] [игрок]'
+    Toggle:
+      Self: '{message: ~prefix: false;}&7Анти-Фантом: &e%state%'
+      Others: '{message: ~prefix: false;}&7Анти-Фантом для &e%player%&7: &e%state%'
+      Notify: '#ffeea2Anti-Phantom mode #fdba5e%state%#ffeea2.'
+      Target: '#ffeea2Set Anti-Phantom mode #fdba5e%state%#ffeea2 for #fdba5e%player_name%#ffeea2.'
+  PlayerInfo:
+    Desc: Показать информацию об игроке.
+    Usage: <игрок>
+  Potion:
+    Desc: Изменение элементов зелий.
+    Usage: <эффект> <усилитель> <продолжительность>
+    Error:
+      NotAPotion: '{message: ~prefix: false;}&cВы должны держать зелье!'
+      InvalidEffect: '{message: ~prefix: false;}&cНедопустимый эффект!'
+    Done: '{message: ~prefix: false;}&7Созданно зелье!'
+  Repair:
+    Desc: Предмет востановлен в инвентаре.
+    Usage: '[все]'
+    Done:
+      Hand: '{message: ~prefix: false;}&7Предмет востановлен!'
+      All: '{message: ~prefix: false;}&7Отремонтированы все предметы в инвентаре!'
+  Reply:
+    Desc: Быстрый ответ на предыдущее личное сообщение.
+    Usage: <текст>
+    Error:
+      Empty: '{message: ~prefix: false;}&7Некому ответить.'
+  Skull:
+    Desc: Получить голову игрока по имени.
+    Usage: <имя>
+    Done: '{message: ~prefix: false;}&7Вы получили голову &e%player%'
+  SocialSpy:
+    Desc: ПМС игрока-шпиона.
+    Usage: '[1/0] [игрок]'
+    Toggle:
+      Self: '{message: ~prefix: false;}&7ПМС игрока-шпиона: &e%state%'
+      Others: '{message: ~prefix: false;}&7ПМС игрока-шпиона для: &e%player%&7: &e%state%'
+  Spawner:
+    Desc: Изменить тип спавнера.
+    Usage: <тип>
+    Done: '{message: ~prefix: false;}&7Тип спавнера изменен на &e%type%&7.'
+    Error:
+      Type: '{message: ~prefix: false;}&7Этот тип не может быть создан.'
+      Block: '{message: ~prefix: false;}&cВы должны смотреть на &eспавнер'
+  SpawnMob:
+    Desc: Возраждение указанного моба(ов).
+    Usage: <тип> [кол-во]
+    Done: '{message: ~prefix: false;}&7Созданн &ex%amount% %type%&7.'
+  Speed:
+    Desc: Изменение скорости полета / ходьбы.
+    Usage: <скорость> [игрок]
+    Done:
+      Self:
+        Walk: '{message: ~prefix: false;}&7Установленна скорость ходьбы: &e%speed%'
+        Fly: '{message: ~prefix: false;}&7Установленна скорость полёта: &e%speed%'
+      Others:
+        Walk: '{message: ~prefix: false;}&7Установленна скорость ходьбы: &e%speed% &7для &e%player%'
+        Fly: '{message: ~prefix: false;}&7Установленна скорость полёта: &e%speed% &7для &e%player%'
+      Walk:
+        Notify: '#ffeea2Your walk speed has been set to #fdba5e%amount%#ffeea2.'
+        Target: 'Set walk speed to #fdba5e%amount%#ffeea2 for #fdba5e%player_name%#ffeea2.'
+      Fly:
+        Notify: '#ffeea2Your fly speed has been set to #fdba5e%amount%#ffeea2.'
+        Target: 'Set fly speed to #fdba5e%amount%#ffeea2 for #fdba5e%amount%#ffeea2.'
+  Sudo:
+    Desc: Заставить игрока выполнить команду или сообщение в чате.
+    Usage: <игрок> <тип> <сообщение>
+    Done:
+      Command: '#ffeea2Forced #fdba5e%player_name%#ffeea2 to perform: #fdba5e/%command%#ffeea2.'
+      Chat: '#ffeea2Forced #fdba5e%player_name%#ffeea2 to write: #fdba5e%command%#ffeea2.'
+  Suicide:
+    Desc: Покончить с собой.
+    Done: '{message: ~prefix: false;}&4%player%&c Покончил с собой.'
+  Summon:
+    Desc: Вызовите игрока в вашем местоположении.
+    Usage: <игрок>
+  System:
+    Desc: Информация о серверной системе.
+  Tell:
+    Desc: Отправить личное сообщение.
+    Usage: <игрок> <сообщение>
+  Time:
+    Desc: Установка или просмотр мирового времени.
+    Done: '{message: ~prefix: false;}&7Установленно время: &e%time%&7.'
+    Info: '{message: ~prefix: false;}&7Время в мире &e%world%&7: &6%ticks% тиков&7, &6%time%'
+    Usage: '[help]'
+    Show:
+      Desc: Display personal and current world time.
+      Usage: '[-w <world>]'
+      Info:
+      - <! prefix:"false" !>
+      - '#ffeea2'
+      - '#ffeea2&lTime Info:'
+      - '#ffeea2'
+      - '#ffeea2▪ #fdba5e%world% Time: #ffeea2%world_time%#d4d9d8 (%world_ticks% ticks)'
+      - '#ffeea2▪ #fdba5ePersonal Time: #ffeea2%player_time%#d4d9d8 (%player_ticks% ticks)'
+      - '#ffeea2▪ #fdba5eServer Time: #ffeea2%server_time%'
+      - '#ffeea2'
+    Set:
+      Desc: Set world's time.
+      Usage: <ticks> [-w <world>]
+      Done: '#ffeea2Set time to #fdba5e%time%#d4d9d8 (%total% ticks)#ffeea2 in world #fdba5e%world%#ffeea2.'
+    Personal:
+      Desc: Set [player's] personal time.
+      Usage: <ticks> [player] [-r] [-s]
+      Target: '#ffeea2Set time to #fdba5e%time%#d4d9d8 (%total% ticks)#ffeea2 for #fdba5e%player_name%#ffeea2.'
+      Notify: '#ffeea2Your personal time has been set to #fdba5e%time%#d4d9d8 (%total% ticks)#ffeea2.'
+  Thunder:
+    Desc: Вызовите молнию.
+    Usage: '[игрок]'
+    Done:
+      Player: '{message: ~prefix: false;}&7Вызвал молнию на &e%player%&7!'
+      Block: '{message: ~prefix: false;}&7Вызвал молнию!'
+  TeleportRequest:
+    Error:
+      Cooldown: Вы можете отправить запрос еще раз в &e%time%
+      Disabled: '&e%player% &cотклоняет запрос на телепортацию.'
+    Call:
+      Desc: Отправить запрос на телепортацию.
+      Usage: <игрок>
+      Notify:
+        From: '{message: ~prefix: false;}&7Отправил запрос на телепортацию к игроку &e%player%&7.'
+        To:
+        - '{message: ~prefix: false;}&6&m                 &6&l[ &e&lЗапрос на телепортацию &6&l]&6&m                 &7'
+        - '&6Игрок &e%player%&6 хочет телепортироваться к тебе.'
+        - '&6Используйте &a/tpaccept %player% &6чтобы принять'
+        - '&6Или &c/tpdeny %player% &6чтобы отказаться.'
+        - '&7'
+        - '&7             {json: ~hint: &a%player% &7Будет телепортирован к вам.; ~chat-type: /tpaccept %player%;}&a&l[Принять]{end-json}         {json: ~hint:&c%player% &7не будет телепортирован к тебе.; ~chat-type: /tpdeny %player%;}&c&l[Отклонить]{end-json}'
+        - '&7'
+    Summon:
+      Desc: Попросите игрока телепортироваться к вам.
+      Usage: <игрок>
+      Notify:
+        From: '{message: ~prefix: false;}&7Отправил запрос на телепортацию к &e%player%&7.'
+        To:
+        - '{message: ~prefix: false;}&6&m                 &6&l[ &e&lЗапрос на телепортацию &6&l]&6&m                 &7'
+        - '&6Игрок &e%player%&6 хочет, чтобы ты телепортировался к нему.'
+        - '&6Используйте &a/tpaccept %player% &6чтобы принять и телепортироваться.'
+        - '&6Или &c/tpdeny %player% &6чтобы отказаться.'
+        - '&7'
+        - '&7             {json: ~hint: &7Вы будете телепортированы к &a%player%&7.; ~chat-type: /tpaccept %player%;}&a&l[Принять]{end-json}         {json: ~hint:&7Ты не будет телепортирован к &c%player%&7.; ~chat-type: /tpdeny %player%;}&c&l[Отклонить]{end-json}'
+        - '&7'
+  TpAccept:
+    Desc: Принять запрос на телепортацию.
+    Usage: '[игрок]'
+    Done: '{message: ~prefix: false;}&7Запрос на телепортацию принят!'
+    Error:
+      Empty: '{message: ~prefix: false;}&7Нечего принимать (или время телепортации истекло).'
+  TpDeny:
+    Desc: Отклоните запрос на телепортацию.
+    Usage: '[игрок]'
+    Done:
+      In: '{message: ~prefix: false;}&7Отклонен запрос на телепортацию.'
+      Out: '{message: ~prefix: false;}&e%player% &cотклоняет запрос на телепортацию.'
+    Error:
+      Empty: '{message: ~prefix: false;}&7Нечего отклонять (или время телепортации истекло).'
+  TpToggle:
+    Desc: Переключение запросов на телепортацию.
+    Usage: '[0/1] [игрок]'
+    Toggle:
+      Self: '{message: ~prefix: false;}&7Запросы на телепортацию: &e%state%'
+      Others: '{message: ~prefix: false;}&7Запросы на телепортацию для &e%player%&7: &e%state%'
+  Tp:
+    Desc: Телепортируйтесь к указанному игроку.
+    Usage: <игрок> &7или &f/%cmd% <кто> <к кому>
+    Done:
+      Self: '{message: ~prefix: false;}&7Телепортируетесь к &e%player%&7...'
+      Others: '{message: ~prefix: false;}&7Игрок &e%who% &7телепортировался к &e%to%&7!'
+  Tppos:
+    Desc: Телепортироваться в указанные координаты.
+    Usage: <x> <y> <z> [игрок]
+    Done:
+      Self: '{message: ~prefix: false;}&7Телепортация...'
+      Others: '{message: ~prefix: false;}&7Игрок &e%player% &7телепортировался на: &e%w%&7, &e%x%&7, &e%y%&7, &e%z%&7!'
+  Top:
+    Desc: Телепортируйтесь на самый высокий блок выше.
+    Usage: '[игрок]'
+    Done:
+      Self: '{message: ~prefix: false;}&Телепортация на самый высокий блок...'
+      Others: '{message: ~prefix: false;}&7Игрок &e%player% &7телепортировался на самый высокий блок.'
+  UnIgnore:
+    Desc: Разблокировать игрока (игроков).
+    Usage: '[игрок]'
+    Done: '{message: ~prefix: false;}&7Игрок &e%player% &7удален из списка игнорируемых.'
+    Error:
+      Already: '{message: ~prefix: false;}&cИгрок &e%player% &cне находится в списке игнорирования.'
+  Vanish:
+    Desc: Режим Ваниша.
+    Toggle: '{message: ~prefix: false;}&7Ваниш: &e%state%'
+    Usage: '[player] [-on] [-off] [-s]'
+    Notify: '#ffeea2Vanish #fdba5e%state%#ffeea2.'
+    Target: '#ffeea2Set vanish #fdba5e%state%#ffeea2 for #fdba5e%player_name%#ffeea2.'
+  Weather:
+    Desc: Изменение погоды в мире.
+    Usage: <солнце/шторм> [мир]
+    Done: '{message: ~prefix: false;}&7Установленна &e%weather%&7 погода в мире &e%world%&7.'
+    Set: '#ffeea2Set #fdba5e%type%#ffeea2 weather in #fdba5e%world%#ffeea2.'
+  Workbench:
+    Desc: Открыт переносной верстак.
+    Usage: '[player] [-s]'
+    Target: '#ffeea2Opened portable workbench for #fdba5e%player_name%#ffeea2.'
+    Notify: <! type:"action_bar" !>#ffeea2You opened portable workbench.
+  Afk:
+    Desc: Переключение режима AFK.
+  Teleport:
+    Desc: Инструменты для телепортации.
+    Usage: '[Помощь]'
+    Error:
+      Requests:
+        Cooldown: '{message: ~sound: ENTITY_VILLAGER_NO;}&cВы можете отправить запрос на телепортацию снова через &e%request_cooldown%'
+        Disabled: '{message: ~sound: ENTITY_VILLAGER_NO;}&cВы не можете отправить телепортацию к игроку &e%player_name%&c.'
+    Accept:
+      Desc: Примите входящий запрос/приглашение на телепортацию.
+      Usage: '[игрок]'
+      Notify:
+        Sender: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Вы приняли телепортацию от &a%player_name%&7!'
+        Target: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}&a%player_name%&7 решил телепортироваться к вам!'
+      Error:
+        Nothing: '{message: ~sound: ENTITY_VILLAGER_NO;}&cНичего, что можно было бы принять (или время телепортации истекло).'
+    Decline:
+      Desc: Отклоните входящий запрос/приглашение на телепортацию.
+      Usage: '[игрок]'
+      Notify:
+        Sender: '{message: ~sound: ENTITY_VILLAGER_NO;}Вы отклонили запрос на телепортацию к &c%player_name%&7.'
+        Target: '{message: ~sound: ENTITY_VILLAGER_NO;}&e%player_name% &cотклонил ваш запрос на телепортацию.'
+      Error:
+        Nothing: '{message: ~sound: ENTITY_VILLAGER_NO;}&cНичего, от чего можно было бы отказаться (или время телепортации истекло).'
+    Invite:
+      Desc: Предложите игроку телепортироваться к вам.
+      Usage: <игрок>
+      Notify:
+        Sender: '{message: ~sound: ENTITY_ENDER_PEARL_THROW;}Отправлен запрос на телепортацию к игроку &e%player_name%&7.'
+        Target:
+        - '{message: ~prefix: false;}'
+        - '&6&m                 &6&l[ &e&lПриглашение на телепортацию &6&l]&6&m                 &7'
+        - '&6Игрок &e%player_name%&6 приглашает вас телепортироваться к нему.'
+        - '&6Используйте &a/tp accept %player_name% &6чтобы принять и телепортироваться.'
+        - '&6или &c/tp decline %player_name% &6чтобы отклонить.'
+        - '&7'
+        - '&7             {json: ~showText: &7Вы будете телепортированы к &a%player_name%&7.; ~runCommand: /tp accept %player_name%;}&a&l[Принять]{end-json}         {json: ~showText:&7Вы не будете телепортированы к &c%player_name%&7.; ~runCommand: /tp decline %player_name%;}&c&l[Отклонить]{end-json}'
+        - '&7'
+    Location:
+      Desc: Телепортироваться в указанные координаты.
+      Usage: <x> <y> <z> [игрок]
+      Done:
+        Self: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Телепортируетесь на &eX: %location_x%&7, &eY: %location_y%&7, &eZ: %location_z%&7 в&e%location_world%&7...'
+        Others: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Игрок &e%player_name% &7телепортировался на координаты &eX: %location_x%&7, &eY: %location_y%&7, &eZ: %location_z%&7 в &e%location_world%&7.'
+        Notify: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Вы были телепортированы на координаты &eX: %location_x%&7, &eY: %location_y%&7, &eZ: %location_z%&7 в &e%location_world%&7.'
+        Target: '<! sound:"ENTITY_ENDERMAN_TELEPORT" !>#ffeea2Player #fdba5e%player_name%#ffeea2 teleported to #fdba5e%location_x%, %location_y%, %location_z%#ffeea2 in #fdba5e%location_world%#ffeea2.'
+    Request:
+      Desc: Отправить запрос на телепортацию игроку.
+      Usage: <игрок>
+      Notify:
+        Sender: Отправил запрос на телепортацию к игроку &e%player_name%&7.
+        Target:
+        - '{message: ~prefix: false;}'
+        - '&6&m                 &6&l[ &e&lЗапрос на телепортацию &6&l]&6&m                 &7'
+        - '&6Игрок &e%player_name%&6 хочет телепортироваться к тебе.'
+        - '&6Используйте &a/tp accept %player_name% &6чтобы принять'
+        - '&6или &c/tp decline %player_name% &6чтобы отклонить.'
+        - '&7'
+        - '&7             {json: ~showText: &a%player_name% &7Будет телепортирован к вам.; ~runCommand: /tp accept %player_name%;}&a&l[Принять]{end-json}         {json: ~showText:&c%player_name% &7не будет телепортирован к тебе.; ~runCommand: /tp decline %player_name%;}&c&l[Отклонить]{end-json}'
+        - '&7'
+    Settings:
+      Desc: Управляйте настройками телепортации.
+      Usage: '[игрок]'
+    Summon:
+      Desc: Вызовите игрока на ваше местоположение.
+      Usage: <игрок>
+      Notify:
+        Sender: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Вызванн игрок &a%player_name%&7 к вашему местоположению.'
+        Target: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Вы были вызваны к &e%player_name%&7.'
+      Target: '<! sound:"ENTITY_ENDERMAN_TELEPORT" !>#ffeea2Summoned #fdba5e%player_name%#ffeea2 to your location.'
+    To:
+      Desc: Телепортируйтесь к указанному игроку или от одного игрока к другому.
+      Usage: <игрок> | <игрок 1> <игрок 2>
+      Done:
+        Self: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Телепортация к &e%player_name%&7...'
+        Others: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Игрок &e%player_1% &7телепортирован к &e%player_2%&7!'
+      Notify:
+        Sender: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Вы были телепортированы к &e%player_name%&7!'
+        Target: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Игрок &e%player_name% &7был телепортированы к вам&7!'
+    Top:
+      Desc: Teleport on the highest block above you.
+      Usage: '[player]'
+      Done:
+        Self: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Teleporting on the highest block...'
+        Others: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}Player &e%player_name% &7have been teleported on the highest block.'
+        Notify: '{message: ~sound: ENTITY_ENDERMAN_TELEPORT;}You were teleported on the highest block by &e%player_name%&7.'
+      Target: '<! sound:"ENTITY_ENDERMAN_TELEPORT" !>#ffeea2Player #fdba5e%player_name%#ffeea2 teleported on the highest block.'
+      Notify: <! sound:"ENTITY_ENDERMAN_TELEPORT" !>#ffeea2You were teleported on the highest block.
+    Toggle:
+      Desc: Toggle teleport requests/invites.
+      Usage: '[player] [-on] [-off] [-s]'
+      Target: '#ffeea2Teleport requests #fdba5e%state%#ffeea2 for #fdba5e%player_name%#ffeea2.'
+      Notify: '#ffeea2Teleport requests #fdba5e%state%#ffeea2.'
+    Send:
+      Desc: Teleport one player to another.
+      Usage: <player> <target> [-s]
+      Target: '<! sound:"ENTITY_ENDERMAN_TELEPORT" !>#ffeea2Player #fdba5e%source%#ffeea2 teleported to #fdba5e%target%#ffeea2.'
+      Notify: '<! sound:"ENTITY_ENDERMAN_TELEPORT" !>#ffeea2You have been teleported to #fdba5e%player_name%#ffeea2.'
+  Dimension:
+    Usage: <world> [player] [-s]
+    Desc: Teleport [player] to a world.
+    Target: '#ffeea2Teleported #fdba5e%player_name%#ffeea2 to the #fdba5e%world%#ffeea2.'
+    Notify: '<! type:"action_bar" sound:"ENTITY_ENDERMAN_TELEPORT" !>#ffeea2You travelled to the #fdba5e%world%#ffeea2.'
+  Equip:
+    Desc: Equip hand item to specified armor slot.
+    Usage: <slot>
+    Done: '<! sound:"ITEM_ARMOR_EQUIP_LEATHER" !>#ffeea2Equipped #fdba5e%item%#ffeea2.'
+  Fire:
+    Desc: Manage [player's] fire ticks.
+    Usage: <action> <amount> [player]
+    Give:
+      Target: '#ffeea2Added #fdba5e%amount%#ffeea2 fire ticks to #fdba5e%player_name%#ffeea2. New fire ticks: #fdba5e%total%#d4d9d8 (%time%s)'
+    Take:
+      Target: '#ffeea2Removed #fdba5e%amount%#ffeea2 fire ticks from #fdba5e%player_name%#ffeea2. New fire ticks: #fdba5e%total%#d4d9d8 (%time%s)'
+    Set:
+      Target: '#ffeea2Set #fdba5e%amount%#ffeea2 fire ticks for #fdba5e%player_name%#ffeea2. New fire ticks: #fdba5e%total%#d4d9d8 (%time%s)'
+  Food:
+    Desc: Manage [player's] food level.
+    Usage: <action> <amount> [player] [-s]
+    Give:
+      Target: '#ffeea2Added #fdba5e%amount%#ffeea2 food points to #fdba5e%player_name%#ffeea2. New food level: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+      Notify: '<! type:"action_bar" !>#ffeea2You got #fdba5e%amount%#ffeea2 food points: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+    Take:
+      Target: '#ffeea2Removed #fdba5e%amount%#ffeea2 food points from #fdba5e%player_name%#ffeea2. New food level: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+      Notify: '<! type:"action_bar" !>#ffeea2You lost #fdba5e%amount%#ffeea2 food points: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+    Set:
+      Target: '#ffeea2Set #fdba5e%amount%#ffeea2 food points for #fdba5e%player_name%#ffeea2. New food level: #fdba5e%current%#ffeea2/#fdba5e%max%#ffeea2.'
+      Notify: '<! type:"action_bar" !>#ffeea2Your food level has been set to #fdba5e%amount%#ffeea2/#fdba5e%max%.'
+  FoodGod:
+    Desc: Toggle [player's] Food God.
+    Usage: '[player] [-on] [-off] [-s]'
+    Target: '#ffeea2Set Food God for #fdba5e%player_name%#ffeea2 to #fdba5e%state%#ffeea2.'
+    Notify: '#ffeea2Food God #fdba5e%state%#ffeea2.'
+  PlayerList:
+    Desc: Show online player list.
+  Mob:
+    Desc: Mob management tools.
+    Usage: '[help]'
+    Kill:
+      Desc: Kill specified mobs.
+      Usage: '[types] [-all] [-r <radius>] [-w <world>] [-lim <limit>]'
+      Error:
+        Type: '#fd5e5eEntity #fdba5e%type%#fd5e5e can not be killed!'
+      Done:
+      - <! prefix:"false" sound:"ENTITY_ZOMBIE_DEATH" !>
+      - '#ffeea2'
+      - '#ffeea2Mobs Kill Details:'
+      - '#ffeea2'
+      - '#ffeea2▪ #fdba5e%type%: #ffeea2%amount%'
+      - '#ffeea2'
+      - '#ffeea2Total #fdba5e%total%#ffeea2 mobs killed in #fdba5e%world%#ffeea2 within #fdba5e%radius%#ffeea2 blocks.'
+      - '#ffeea2'
+    Spawn:
+      Desc: Spawn specified mob.
+      Usage: <type> [amount] [-name <name>]
+      Error:
+        Type: '#fd5e5eThis Entity Type is invalid or can not be spawned!'
+      Done: '#ffeea2Created #fdba5ex%amount% %type%#ffeea2.'
+  Smite:
+    Desc: Smite [player] with lightning.
+    Usage: '[player] [-s]'
+    Target: '#ffeea2Smited #fdba5e%player_name%#ffeea2!'
+    Notify: '#ffeea2You have been smited!'
+User:
+  Ignore:
+    PrivateMessage: '{message: ~prefix: false;}&cЭтот игрок запрещает вам отправлять его личные сообщения.'
+    TeleportRequest: '{message: ~prefix: false;}&cЭтот игрок запрещает вам отправлять ему телепортировать запросы.'
+  Settings:
+    Teleport:
+      Editor:
+        Enter:
+          Player: '&7Напиши &aимя &7игрока...'
+Other:
+  Free: '&aСвободно'
+  'On': '&aВКЛ'
+  'Off': '&cВЫКЛ'
+  Enabled: '&aВКЛ'
+  Disabled: '&cВЫКЛ'
+  Eternity: Вечность
+  Menu:
+    List_Delimiter: '&a▸ '
+  PlayerData:
+    Error:
+      Read: '{message: ~sound: BLOCK_ANVIL_PLACE;}&cAn unexpected error occured while trying to read player data file.'
+      Write: '{message: ~sound: BLOCK_ANVIL_PLACE;}&cAn unexpected error occured while trying to save player data file.'
+Error:
+  InvalidName: '{message: ~prefix: false;}&cНедопустимое имя: &e%name%&c. Содержит запрещенные слова.'
+  Material:
+    Invalid: '&cNo valid material(s) provided!'
+  Enchant: '{message: ~prefix: false;}&cНедействительное зачарование!'
+  Self: '{message: ~prefix: false;}&cНевозможно подать заявку самостоятельно!'
+  Enchantment:
+    Invalid: '#fd5e5eInvalid enchantment!'
+  Player:
+    NoItem: '#fd5e5ePlayer don''t have an item!'
+EquipmentSlot:
+  HAND: Рука
+  OFF_HAND: С Рук
+  FEET: Стопа
+  LEGS: Ноги
+  CHEST: Грудь
+  HEAD: Голова
+WarpSortType:
+  WARP_NAME: Имя Варпа
+  WARP_ID: Id Варпа
+  RATING: Рейтинг
+  WARP_TYPE: Warp Type
+  VISIT_COST: Visit Cost
+Worlds:
+  Command:
+    Goto:
+      Usage: <мир>
+      Desc: Телепортируйтесь в указанный мир.
+      Done: Свист!
+    Move:
+      Usage: <игрок> <мир>
+      Desc: Телепортируйте игрока в указанный мир.
+      Done: '{message: ~prefix: false;}&e%player% &7переехал в мир &e%world%&7!'
+    WorldManager:
+      Desc: Мировой менеджер
+      Create:
+        Usage: <имя>
+        Desc: Создайте новую конфигурацию мира.
+        Error: Мир с таким названием уже существует!
+        Done: '{message: ~prefix: false;}&7Созданная конфигурация мира: &a%world_id%&7!'
+      Delete:
+        Usage: <мир> [папка]
+        Desc: Удалите указанный мир и конфигурацию.
+        Error: '{message: ~prefix: false;}&cНе удалось удалить мир! Мир загружен или ошибка доступа к файлу.'
+        Done: '{message: ~prefix: false;}&7Удалён &a%world_id% &7мир!'
+      Editor:
+        Desc: Редактор открытого мира.
+      Load:
+        Usage: <мир>
+        Desc: Загрузите указанный мир на сервер.
+        Error: '{message: ~prefix: false;}&cМир уже загружен или настройки мира являются нерабочими!'
+        Done: '{message: ~prefix: false;}&7Загруженный мир: &a%world_id%&7!'
+      Unload:
+        Usage: <мир>
+        Desc: Выгрузить указанный мир с сервера.
+        Error: '{message: ~prefix: false;}&Мир уже выгружен или внутренняя ошибка сервера!'
+        Done: '{message: ~prefix: false;}&7Разгруженный мир: &a%world_id%&7!'
+    Worlds:
+      Create:
+        Usage: <name>
+        Desc: Create a new world config.
+        Error: '#fd5e5eWorld with this name already exists!'
+        Done: '#ffeea2Created world config: #fdba5e%world_id%#ffeea2!'
+      Delete:
+        Usage: <world> [-f]
+        Desc: Delete specified world cofig [and world folder].
+        Error: '#fd5e5eCould not delete world #fdba5e%world_id%#fd5e5e! World is loaded or file access error.'
+        Done: '#ffeea2Deleted #fdba5e%world_id%#ffeea2 world!'
+      Editor:
+        Desc: Open world editor.
+      Load:
+        Usage: <world>
+        Desc: Load specified world into the server.
+        Error: '#fd5e5eWorld is already loaded or world settings are invalid!'
+        Done: '#ffeea2Loaded world: #fdba5e%world_id%#ffeea2!'
+      Unload:
+        Usage: <world>
+        Desc: Unload specified world from the server.
+        Error: '#fd5e5eWorld is already unloaded!'
+        Done: '#ffeea2Unloaded world: #fdba5e%world_id%#ffeea2!'
+  Error:
+    BadCommand: '{message: ~prefix: false;}&cВы не можете использовать эту команду здесь!'
+    CommandBlocked: '#fd5e5eYou can''t use that command in this world!'
+    FlyDisabled: '#fd5e5eFlying is not allowed in this world!'
+  Editor:
+    Enter:
+      Seed: '&7Введите сид &aмира&7...'
+      Generator: '&7Введите &aимя &7мира...'
+      Value: '#d4d9d8Enter #aefd5e[Value]'
+      Spawns: '#d4d9d8Enter #aefd5e[Category] [Value]'
+      Seconds: '#d4d9d8Enter #aefd5e[Seconds Amount]'
+    World:
+      Object:
+        Name: '#ffed6a&lWorld: &f%world_id%'
+        Lore:
+        - '#ffed6a&lCurrent:'
+        - '#ffed6a▪ #bdc8c9Created: #ffed6a%world_is_created%'
+        - '#ffed6a▪ #bdc8c9Loaded: #ffed6a%world_is_loaded%'
+        - '#ffed6a▪ #bdc8c9Auto-Load: #ffed6a%world_auto_load%'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aSettings'
+        - '#bbff6a▪ #bdc8c9Shift-Right: #bbff6aDelete #ff6a6a(If not created)'
+      AutoLoad:
+        Name: '#ffed6a&lAuto-Load'
+        Lore:
+        - '#ffed6a▪ #bdc8c9Enabled: #ffed6a%world_auto_load%'
+        - ''
+        - '#bdc8c9Sets whether this world will be'
+        - '#bdc8c9auto-loaded on server startup.'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aToggle'
+      Load:
+        Name: '#ffed6a&lLoad World'
+        Lore: []
+      Unload:
+        Name: '#ffed6a&lUnload World'
+        Lore: []
+      Delete:
+        Name: '#ffed6a&lDelete World'
+        Lore:
+        - '#bdc8c9Delete world''s config and/or world files.#ff6a6a (No Undo)'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9[Q/Drop] Key: #bbff6aDelete Files'
+        - '#bbff6a▪ #bdc8c9Shift-Right: #bbff6aDelete Config & Files'
+      Generator:
+        Name: '#ffed6a&l[Creator] Chunk Generator'
+        Lore:
+        - '#ffed6a▪ #bdc8c9Current: #ffed6a%world_generator%'
+        - ''
+        - '#bdc8c9Sets chunk generator for this world.'
+        - '#bdc8c9It will suggest you all available generators'
+        - '#bdc8c9including ones from other plugins.'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aChange'
+      Environment:
+        Name: '#ffed6a&l[Creator] Environment'
+        Lore:
+        - '#ffed6a▪ #bdc8c9Current: #ffed6a%world_environment%'
+        - ''
+        - '#bdc8c9Sets world''s environment.'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aToggle'
+      Structures:
+        Name: '#ffed6a&l[Creator] Structure Generation'
+        Lore:
+        - '#ffed6a▪ #bdc8c9Enabled: #ffed6a%world_structures%'
+        - ''
+        - '#bdc8c9Sets whether structures should be'
+        - '#bdc8c9generated in this world.'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aToggle'
+      GameRules:
+        Name: '#ffed6a&lGame Rules'
+        Lore:
+        - '#bdc8c9Manage world''s Game Rules here!'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aNavigate'
+      AutoWipe:
+        Name: '#ffed6a&lAuto Wipe'
+        Lore:
+        - '#bdc8c9Sets whether or not this world'
+        - '#bdc8c9should auto reset with'
+        - '#bdc8c9certain interval.'
+        - ''
+        - '#ffed6a&lCurrent:'
+        - '#ffed6a▪ #bdc8c9Enabled: #ffed6a%world_auto_wipe_enabled%'
+        - '#ffed6a▪ #bdc8c9Interval: #ffed6a%world_auto_wipe_interval%'
+        - '#ffed6a▪ #bdc8c9Last Wipe: #ffed6a%world_auto_wipe_last_wipe%'
+        - '#ffed6a▪ #bdc8c9Next Wipe: #ffed6a%world_auto_wipe_next_wipe%'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aToggle'
+        - '#bbff6a▪ #bdc8c9Right-Click: #bbff6aChange Interval'
+        - '#bbff6a▪ #bdc8c9[Q/Drop] Key: #bbff6aSet Last Time'
+      AutoSave:
+        Name: '#ffed6a&lAuto Save'
+        Lore:
+        - '#ffed6a▪ #bdc8c9Enabled: #ffed6a%world_auto_save%'
+        - ''
+        - '#bdc8c9Sets whether or not the world'
+        - '#bdc8c9will automatically save.'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aToggle'
+      PvPAllowed:
+        Name: '#ffed6a&lPvP Allowed'
+        Lore:
+        - '#ffed6a▪ #bdc8c9Enabled: #ffed6a%world_pvp_allowed%'
+        - ''
+        - '#bdc8c9Sets the PVP setting for this world.'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aToggle'
+      Difficulty:
+        Name: '#ffed6a&lDifficulty'
+        Lore:
+        - '#ffed6a▪ #bdc8c9Current: #ffed6a%world_difficulty%'
+        - ''
+        - '#bdc8c9Sets world''s difficulty.'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aToggle'
+      SpawnLimits:
+        Name: '#ffed6a&lSpawn Limits'
+        Lore:
+        - '#bdc8c9Sets the limit for number of Spawn Category'
+        - '#bdc8c9entities that can spawn in a chunk'
+        - '#bdc8c9in this world.'
+        - ''
+        - '#ffed6a&lCurrent:'
+        - '#bdc8c9%world_spawn_limits%'
+        - ''
+        - '#ffa76a&lNotes:'
+        - '#ffa76a▪ #bdc8c9Use #ffa76a-1#bdc8c9 for no limit.'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aChange'
+      SpawnTicks:
+        Name: '#ffed6a&lTicks Per Spawn'
+        Lore:
+        - '#bdc8c9Sets the world''s ticks per'
+        - '#bdc8c9Spawn Category mob spawns value.'
+        - ''
+        - '#ffed6a&lCurrent:'
+        - '#bdc8c9%world_spawn_ticks%'
+        - ''
+        - '#bbff6a&lActions:'
+        - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aChange'
+      Rule:
+        Object:
+          Name: '#ffed6a&lRule: &f%name%'
+          Lore:
+          - '#ffed6a▪ #bdc8c9Value: #ffed6a%value%'
+          - ''
+          - '#bbff6a&lActions:'
+          - '#bbff6a▪ #bdc8c9Left-Click: #bbff6aToggle / Change'
+Environment:
+  NORMAL: Нормальный
+  NETHER: Незер
+  THE_END: Энд
+  CUSTOM: Кастом
+WorldType:
+  NORMAL: Нормальный
+  FLAT: Плоский
+  LARGE_BIOMES: Большие Биомы
+  AMPLIFIED: Усиленный
+Difficulty:
+  PEACEFUL: Мирная
+  EASY: Легкая
+  NORMAL: Нормальная
+  HARD: Сложная
+Homes:
+  Command:
+    DeleteHome:
+      Desc: Удалить точку дома.
+      Usage: '[дом] &7или &e/%cmd% [имя] [дом]'
+      Error: '{message: ~prefix: false;}&cНе удалось удалить дом. Дом с данной личностью не существует.'
+      Done:
+        Own:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 50; ~fadeOut:20;}&c&lДом Удалён'
+        - '&7Вы удалили дом &c%home_id%.'
+        Other:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 50; ~fadeOut:20;}&c&lДом Удалён'
+        - '&7Вы удалили &c%home_owner%&7 &c%home_id% &7дом.'
+    Home:
+      Desc: Телепортирование домой.
+      Usage: '[домой] &7or &e/%cmd% [игрок] [домой]'
+      Error:
+        Invalid: '{message: ~prefix: false;}&7Дома не существует.'
+      Done:
+        Own:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 50; ~fadeOut:20;}&e&lДом'
+        - '&7Вы телепортировались в дом &e%home_name%.'
+        Other:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 50; ~fadeOut:20;}&e&lДом'
+        - '&7Вы телепортировались в дом &e%home_owner%&7 &e%home_name%'
+    Homes:
+      Desc: Управляйте своими домами.
+      Usage: '[игрок]'
+      Delete:
+        Desc: Delete home.
+        Usage: <home>
+      Teleport:
+        Desc: Teleport to home.
+        Usage: <home>
+      Visit:
+        Desc: Visit public home a home you have invite to.
+        Usage: <player> <home>
+      List:
+        Desc: A list of homes.
+        Usage: '[player]'
+      Set:
+        Desc: Create a new home point.
+        Usage: '[name]'
+    SetHome:
+      Desc: Установите местоположение дома..
+      Usage: '[дом]'
+      Error:
+        Limit: '{message: ~prefix: false;}&cВы достигли предела возможностей. У вас не может быть больше домов.'
+        World: '{message: ~prefix: false;}&cВы не можете поселиться дома в этом мире!'
+        Region: '{message: ~prefix: false;}&cВы не можете установить дом в этом регионе!'
+      Done:
+      - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 50; ~fadeOut:20;}&a&lДом Установлен!'
+      - '&7Телепортироваться: &a/home %home_id% &8| &7Меню: &a/homes'
+    HomesAdmin:
+      Desc: Admin home management utils.
+      Usage: '[help]'
+      Delete:
+        Desc: Delete player's home.
+        Usage: <player> [home]
+        Done:
+          Single: 'You deleted #aefd5e%player_name%#d4d9d8''s #aefd5e%home_id%#d4d9d8 home.'
+          All: 'You deleted all #aefd5e%player_name%#d4d9d8''s #d4d9d8 homes.'
+      Create:
+        Desc: Create a home for the player.
+        Usage: <player> [name]
+        Done:
+          Fresh: 'You created #aefd5e%home_id%#d4d9d8 home for #aefd5e%player_name%#d4d9d8.'
+          Edited: 'You edited #aefd5e%player_name%#d4d9d8''s #aefd5e%home_id%#d4d9d8 home location.'
+  Editor:
+    Enter:
+      InvitedPlayer: '&7Введите &aимя игрока&7...'
+      Name: '&7Введите &aимя дома&7...'
+      PlayerName: '#d4d9d8Enter #aefd5e[Player Name]'
+      HomeName: '#d4d9d8Enter #aefd5e[Home Name]'
+  Home:
+    Teleport:
+    - <! type:"titles:20:50:20" sound:"ENTITY_ENDERMAN_TELEPORT" !>
+    - '#aefd5e&lHome'
+    - '#d4d9d8You teleported to your #aefd5e%home_name%#d4d9d8 home.'
+    Visit:
+      Success:
+      - <! type:"titles:20:50:20" sound:"ENTITY_ENDERMAN_TELEPORT" !>
+      - '#fdf35e&lGuest Home'
+      - '#d4d9d8You visited the #fdf35e%home_owner%#d4d9d8''s #fdf35e%home_name%#d4d9d8 home.'
+      Error:
+        NotPermitted: <! sound:"ENTITY_VILLAGER_NO" !>#fd5e5eYou don't have invite to this home!
+    Set:
+      Error:
+        Limit: '#fd5e5eYou have reached your homes limit. You can not set more.'
+        World: '#fd5e5eYou can not set home in this world!'
+        Region: '#fd5e5eYou can not set home in this region!'
+        Protection: '#fd5e5eYou can not set home in protected areas!'
+      Success:
+      - <! type:"titles:20:50:20" sound:"BLOCK_WOODEN_DOOR_OPEN" !>
+      - '#aefd5e&lHome Set!'
+      - '#d4d9d8Teleport: #aefd5e/homes teleport %home_id%#d4d9d8 | Menu: #aefd5e/homes list'
+      Edited:
+      - <! type:"titles:20:50:20" sound:"BLOCK_WOODEN_DOOR_CLOSE" !>
+      - '#aefd5e&lHome Set!'
+      - '#d4d9d8Home location has been updated.'
+    Delete:
+      Done:
+      - <! type:"titles:20:50:20" sound:"ENTITY_ZOMBIE_BREAK_WOODEN_DOOR" !>
+      - '#aefd5e&lHome Removed!'
+      - '#d4d9d8You deleted #aefd5e%home_name%#d4d9d8 home.'
+    Error:
+      Invalid: '#fd5e5eHome with such id does not exist.'
+Kits:
+  Command:
+    Kit:
+      Usage: <кит> [игрок]
+      Desc: Получите указанный кит.
+    KitEditor:
+      Desc: Откройте редактор китов.
+    KitPreview:
+      Usage: <кит>
+      Desc: Предварительный просмотр содержимого указанного кита.
+  Kit:
+    Error:
+      NoKits: '{message: ~prefix: false;}&cНикаких китов в наличии нет.'
+      InvalidKit: '{message: ~prefix: false;}&cКит &e%kit_id% &cне существует!'
+      NoPermission: '{message: ~prefix: false;}&cУ вас нет разрешений на использование этим китом!'
+      NotEnoughFunds: '{message: ~prefix: false;}&cВы не можете позволить себе этот кит! Вам нужно &c$%kit_cost_money%&7.'
+      Cooldown:
+        Expirable: '{message: ~prefix: false;}&cТы должен подождать &e%kit_user_cooldown% &cпрежде чем вы сможете снова использовать этот кит.'
+        OneTimed: '{message: ~prefix: false;}&cЭтот набор рассчитан на один раз. Ты уже использовал этот кит.'
+    Notify:
+      Give:
+        Self: '{message: ~prefix: false;}&7Полученный кит: &a%kit_name% &8(%kit_id%)&7!'
+        Others: '{message: ~prefix: false;}&7Выданный кит: &a%kit_name% &8(%kit_id%) &7игроку &a%player%&7!'
+  Editor:
+    Enter:
+      KitId: '&7Напишите &aуникальный &идентификатор &7кита...'
+      Command: '&7Напишите &aкоманду&7...'
+      Cooldown: '&7Напишите &aзадержку&7... &a(в секундах)'
+      Cost: '&7Напишите &aцену&7...'
+      Name: '&7Напишите новое &aимя&7...'
+      Description: '&7Напишите описание &aкита&7...'
+      Priority: '&7Напишите &aприоритет&7...'
+    Error:
+      AlreadyExists: '&cКомплект уже существует!'
+Warps:
+  Command:
+    DeleteWarp:
+      Desc: Удалить Варп.
+      Usage: <варп>
+      Done:
+      - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&c&lВарп Удалён.'
+      - '&7Имя Варпа: &c%warp_name% &7|Id Варпа: &c%warp_id%'
+    SetWarp:
+      Desc: Установите новый варп.
+      Usage: <варп>
+      Done:
+        New:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&a&lВарп создан!'
+        - '&7Id Варпа: &a%warp_id% &7| Редактирование варпов &a/warps'
+        Location:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&a&lВарп заменян!'
+        - '&7Местоположение варпа обновлено.'
+      Error:
+        Limit:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&c&lОшибка варпа!'
+        - '&7Вы достигли своего лимита варпов'
+        World:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&c&lОшибка варпа!'
+        - '&7Вы не можете создавать варп в этом мире.'
+        Exists:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&c&lОшибка варпа!'
+        - '&7Варп с таким названием уже существует!'
+    Warp:
+      Desc: Просмотр варпа или телепортация в указанный варп.
+      Usage: <варп> [игрок]
+    Warps:
+      Done:
+        Self:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 60; ~fadeOut: 20;}&e&l%warp_name%'
+        - '%warp_welcome_message%'
+        Others: '{message: ~prefix: false;}Player &a%player% &7телепортировался в варп &a%warp_name%&7...'
+      Desc: Warp management.
+      Usage: '[help]'
+      Delete:
+        Desc: Delete specified warp.
+        Usage: <warp>
+      Create:
+        Desc: Set a new warp.
+        Usage: <warp>
+      Teleport:
+        Desc: Teleport to a specified warp.
+        Usage: <warp> [player]
+        Others: '{message: ~prefix: false;}Player &a%player% &7teleported on warp &a%warp_name%&7...'
+      List:
+        Desc: Open Warps GUI.
+        Usage: '[player]'
+        Others: 'Opened Warps GUI for #aefd5e%player_display_name%#d4d9d8.'
+    WarpEditor:
+      Desc: Откройте редактор варпов.
+  Warp:
+    Error:
+      Invalid: '{message: ~prefix: false;}&cWarp &e%warp_id% &cdoes not exists!'
+      NoPerm:
+      - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&c&lОшибка варпа!'
+      - '&7У вас нет разрешения на этот варп!'
+    Teleport:
+      Error:
+        NotEnoughFunds:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&c&lОшибка варпа!'
+        - '&7Вам нужно &c$%warp_teleport_cost_money%&7 чтобы телепортироваться в варп!'
+        Unsafe:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 20; ~stay: 80; ~fadeOut: 20;}&e&lНебезопасный Варп!'
+        - '&7Пожалуйста, сообщите об этом персоналу сервера.'
+        NoPermission:
+        - <! type:"titles:20:50:30" sound:"ENTITY_VILLAGER_NO" !>
+        - '#fd5e5e&lNo Permission!'
+        - '#d4d9d8You don''t have permission for %warp_name% warp!'
+        Cooldown:
+        - <! type:"titles:20:50:30" sound:"ENTITY_VILLAGER_NO" !>
+        - '#fd5e5e&lCooldown!'
+        - '#d4d9d8You can visit #fd5e5e%warp_name%#d4d9d8 again in #fd5e5e%cooldown%'
+        Time:
+        - <! type:"titles:20:50:30" sound:"ENTITY_VILLAGER_NO" !>
+        - '#fd5e5e&lWrong Time!'
+        - '#fdba5e%warp_name%#d4d9d8 is not available for visits now.'
+      Done:
+      - <! type:"titles:20:50:30" sound:"ENTITY_ENDERMAN_TELEPORT" !>
+      - '#fdf35e&l%warp_name%'
+      - '#d4d9d8%warp_description%'
+    Creation:
+      New:
+      - <! type:"titles:20:50:30" sound:"BLOCK_ANVIL_PLACE" !>
+      - '#aefd5e&lWarp Created!'
+      - '#d4d9d8Teleport: #aefd5e/warp %warp_id%#d4d9d8 | Edit in: #aefd5e /warplist'
+      Relocate:
+      - <! type:"titles:20:50:30" sound:"BLOCK_ANVIL_PLACE" !>
+      - '#aefd5e&lWarp Relocated!'
+      - '#d4d9d8Warp #aefd5e%warp_name%#d4d9d8 has been moved to here.'
+      Error:
+        Limit:
+        - <! type:"titles:20:50:30" sound:"ENTITY_VILLAGER_NO" !>
+        - '#fd5e5e&lLimit Reached!'
+        - '#d4d9d8You have reached your warps limit.'
+        World:
+        - <! type:"titles:20:50:30" sound:"ENTITY_VILLAGER_NO" !>
+        - '#fd5e5e&lForbidden World!'
+        - '#fd5e5eYou can''t create warps in this world.'
+        Exists:
+        - <! type:"titles:20:50:30" sound:"ENTITY_VILLAGER_NO" !>
+        - '#fd5e5e&lAlready Exists!'
+        - '#d4d9d8Warp with such name already exists!'
+        Unsafe:
+        - <! type:"titles:20:50:30" sound:"ENTITY_VILLAGER_NO" !>
+        - '#fd5e5e&lUnsafe Location!'
+        - '#d4d9d8You can''t create warps here!'
+  Editor:
+    Error:
+      Description:
+        Length: Длина строки не может быть больше, чем &c%length% символов&7.
+        Size: Количество строк не может быть больше, чем &c%size%&7.
+    Enter:
+      Welcome: '&7Введите приветственное сообщение...'
+      CostMoney: '&7Введите стоимость телепортации...'
+      Name: '&7Введите новое имя...'
+      Description: '&7Введите описание...'
+      Command: '#d4d9d8Enter #aefd5e[Command Name]'
+      Times: '#d4d9d8Enter #aefd5e[Times] #fdba5e (10:00 14:00)'
+      Cooldown: '#d4d9d8Enter #aefd5e[Cooldown]'
+  Delete:
+    Done:
+    - <! type:"titles:20:50:30" sound:"BLOCK_GLASS_BREAK" !>
+    - '#fd5e5e&lWarp Deleted'
+    - '#d4d9d8Warp #fd5e5e%warp_name%#d4d9d8 has been deleted.'
+WarpType:
+  PLAYER: Игрок
+  SERVER: Сервер
+Chat:
+  Chat:
+    AntiSpam:
+      Similar:
+        Msg: '{message: ~prefix: false;}&cНе отправляйте спам-сообщения!'
+        Cmd: '{message: ~prefix: false;}&cНе отправляйте спам-команды!'
+      Delay:
+        Msg: '{message: ~prefix: false;}&cТы должен подождать &c%time% &cпрежде чем ты сможешь отправить еще одно сообщение.'
+        Cmd: '{message: ~prefix: false;}&cТы должен подождать &c%time% &cпрежде чем ты сможешь использовать другую команду.'
+    Mention:
+      Error:
+        Cooldown: '{message: ~prefix: false;}&cYou can mention &e%name%&c again in &e%time%&c.'
+  Command:
+    ShortChannel:
+      Desc: Переключите канал чата или отправьте сообщение на канал
+      Usage: '[сообщение]'
+    Channel:
+      Desc: Управляйте своими каналами чата.
+      Join:
+        Usage: <канал>
+      Leave:
+        Desc: Покиньте канал.
+        Usage: <канал>
+      Set:
+        Desc: Установите канал по умолчанию.
+        Usage: <канал>
+    Join:
+      Desc: Присоединяйтесь к каналу.
+    ClearChat:
+      Desc: Clear chat.
+      Done: '{message: ~prefix: false;}&7Chat has been cleared by &a%player_display_name%&7.'
+    Me:
+      Desc: Show action in chat.
+      Usage: <action>
+    Reply:
+      Desc: Quick reply on the latest private message.
+      Usage: <message>
+      Error:
+        Empty: '{message: ~prefix: false;}&cYou have not received any private messages.'
+    Tell:
+      Desc: Send private message to a player.
+      Usage: <player> <message>
+    Spy:
+      Desc: Chat Spy Features
+      Usage: '[help]'
+      Mode:
+        Desc: Toggle the specified Spy Mode.
+        Usage: <type> [player] [state]
+        Done:
+          Others: Set &c%type% &7Spy Mode for &c%player_name% &7to &f%state%
+          Notify: '&c%type% &7Spy Mode: &f%state%'
+      Logger:
+        Desc: Adds or removes specified Spy Logger to a player.
+        Usage: <add | remove> <type> <player>
+        Done:
+          Add: Set &c%type% &7Spy Logger for &c%player_name% &7to &f%state%
+  Channel:
+    Join:
+      Success: '{message: ~prefix: false;}&7Вы присоединились к &a%channel_name% &7чатовому каналу.'
+      Error:
+        NoPermission: '{message: ~prefix: false;}&cУ вас нет прав на присоединение к этому каналу.'
+        AlreadyIn: '{message: ~prefix: false;}&cВы уже присоединились к этому каналу!'
+    Leave:
+      Success: '{message: ~prefix: false;}&7Вы покинули &c%channel_name%&7 чатовый канал.'
+      Error:
+        NotIn: '{message: ~prefix: false;}&cВы находитесь не в канале!'
+    Set:
+      Success: '{message: ~prefix: false;}&7Установить канал по умолчанию: &e%channel_name%&7.'
+    Error:
+      Invalid: '{message: ~prefix: false;}&cНедопустимый канал!'
+Menu:
+  Command:
+    Menu:
+      Desc: Открыть спец меню.
+      Usage: <id> [игрок]
+      Others:
+        Done: '{message: ~prefix: false;}&7Открыто меню &e%menu% &7игроку &e%player%&7.'
+  Error:
+    Invalid: '{message: ~prefix: false;}&cНет такого меню!'
+    NoPermission: '{message: ~prefix: false;}&cУ вас нет разрешения на использование этого меню!'
+Afk:
+  Enter: '{message: ~prefix: false;}&e*** &6%player% &eсейчас в АФК... ***'
+  Exit: '{message: ~prefix: false;}&e*** &6%player% &eвозвращается после &6%time% &e***'
+  Kick: '&eВас силой выгнали за то, что вы АФК больше, чем &6%time%&e!'
+  TellNotify: '{message: ~prefix: false;}&e*** &6%player% &eнаходится в АФК и может не отвечать на сообщения. &e***'
+Enhancements:
+  Command:
+    ChestSort:
+      Desc: Переключите сортировку сундуков.
+      Toggle: '{message: ~prefix: false;}&7Сортировка сундуков: &e%state%'
+    Chairs:
+      Desc: Функция переключения стульев.
+      Toggle: '{message: ~prefix: false;}&7Стулья: &e%state%'
+    Sit:
+      Desc: Сядьте на блок, на котором вы стоите.
+Bans:
+  Kick:
+    Kicked:
+    - '&c&nВас выгнали с сервера!'
+    - '&7'
+    - '&cПричина: &e%punishment_reason%'
+    - '&cАдмин: &e%punishment_punisher%'
+    Banned:
+      Perma:
+      - '&c&nВы были забанены на этом сервере!'
+      - '&7'
+      - '&cПричина: &e%punishment_reason% &7| &cAdmin: &e%punishment_punisher%'
+      - '&cДата БАНА: &e%punishment_date_created%'
+      - '&7'
+      - '&7Купить разбан на: &fwww.myserver.com'
+      Temp:
+      - '&c&nВы были забанены на этом сервере!'
+      - '&7'
+      - '&cПричина: &e%punishment_reason% &7| &cAdmin: &e%punishment_punisher%'
+      - '&cДата БАНА: &e%punishment_date_created%'
+      - '&7'
+      - '&cРазбан через: &f%punishment_expires_in%'
+      - '&7'
+      - '&7Купить разбан на: &fwww.myserver.com'
+    Done: '{message: ~prefix: false;}&7Игрок &c%punishment_user% &7был выгнан. Причина: &c%punishment_reason%'
+    Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7кикнул &c%punishment_user%&7. Причина: &c%punishment_reason%'
+  Command:
+    History:
+      Mute:
+        Desc: Просмотр истории о Муте игрока.
+        Usage: '[игрок]'
+      Ban:
+        Desc: Просмотр истории банов игрока.
+        Usage: '[игрок]'
+      Warn:
+        Desc: Просмотр истории предупреждений игрока.
+        Usage: '[игрок]'
+    List:
+      Ban:
+        Desc: Список всех запрещенных на данный момент игроков и IP-адресов.
+      Mute:
+        Desc: Список всех отключенных в данный момент игроков и IP-адресов.
+      Warn:
+        Desc: Список всех предупрежденных в данный момент игроков.
+    Ban:
+      Desc: Забанить игрока.
+      Usage: <игрок> <время> <причина>
+    Banip:
+      Desc: Забанить IP-адрес.
+      Usage: <игрок/ip> <время> <причина>
+    Mute:
+      Desc: Мут игрока с IP-адресом.
+      Usage: <игрок/ip> <время> <причина>
+    Kick:
+      Desc: Кикнуть игрока или игроков с IP.
+      Usage: <игрок/ip> <причина>
+    Unmute:
+      Desc: Размут по IP.
+      Usage: <игрок/ip>
+    Unban:
+      Desc: Разбан по IP.
+      Usage: <игрок/ip>
+    Warn:
+      Desc: Предупредить игрока.
+      Usage: игрок> <время> <причина>
+    Unwarn:
+      Desc: Удалить последнее предупреждение игрока.
+      Usage: <игрок>
+  Ban:
+    User:
+      Perma:
+        Done: '{message: ~prefix: false;}&7Игрок &c%punishment_user% &7был навсегда забанен по причине: &c%punishment_reason%'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7навсегда забанен &c%punishment_user%&7. Причина: &c%punishment_reason%'
+      Temp:
+        Done: '{message: ~prefix: false;}&7Игрок &c%punishment_user% &7был забанен на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7забанил &c%punishment_user% &7на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%'
+    IP:
+      Perma:
+        Done: '{message: ~prefix: false;}&7IP &c%punishment_user% &7был навсегда забанен по причине: &c%punishment_reason%'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7навсегда забанил IP &c%punishment_user%&7. Причина: &c%punishment_reason%'
+      Temp:
+        Done: '{message: ~prefix: false;}&7IP &c%punishment_user% &7был забанен на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7забанил IP &c%punishment_user% &7на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%'
+  Unban:
+    User:
+      Done: '{message: ~prefix: false;}&7Игрок разбанен: &a%punishment_user%&7.'
+      Broadcast: '{message: ~prefix: false;}&7Админ &a%admin% &7разбанил игрока: &a%punishment_user%&7.'
+    IP:
+      Done: '{message: ~prefix: false;}&7IP разбанен: &a%punishment_user%&7.'
+      Broadcast: '{message: ~prefix: false;}&7Админ &a%admin% &7разбанил IP: &a%punishment_user%&7.'
+  Mute:
+    User:
+      Perma:
+        Done: '{message: ~prefix: false;}&7User &c%punishment_user% &7вы были навсегда замутенны: &c%punishment_reason%'
+        Notify:
+        - '{message: ~prefix: false;}'
+        - '&8&m                                                       &7'
+        - '&c&l У вас мут навсегда!'
+        - '&7'
+        - '&7       Причина: &c%punishment_reason%&7.'
+        - '&8&m                                                       &7'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7навсегда замутил &c%punishment_user%&7. Причина: &c%punishment_reason%'
+      Temp:
+        Done: '{message: ~prefix: false;}&7Игрок &c%punishment_user% &7был замутен на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%'
+        Notify:
+        - '{message: ~prefix: false;}'
+        - '&8&m                                                       &7'
+        - '&c&l        Вы были замутенны!'
+        - '&7'
+        - '&7       Причина: &c%punishment_reason%&7.'
+        - '&7         Истекает через: &c%punishment_expires_in%'
+        - '&8&m                                                       &7'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7замутил &c%punishment_user% &7на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%'
+    IP:
+      Perma:
+        Done: '{message: ~prefix: false;}&7IP &c%punishment_user% &7был навсегда замутен Причина: &c%punishment_reason%'
+        Notify:
+        - '{message: ~prefix: false;}'
+        - '&8&m                                                       &7'
+        - '&c&l Вы были навсегда замутенны!'
+        - '&7'
+        - '&7       Причина: &c%punishment_reason%&7.'
+        - '&8&m                                                       &7'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7навсегда замутил IP &c%punishment_user%&7. Причина: &c%punishment_reason%'
+      Temp:
+        Done: '{message: ~prefix: false;}&7IP &c%punishment_user% &7был замутен на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%'
+        Notify:
+        - '{message: ~prefix: false;}'
+        - '&8&m                                                       &7'
+        - '&c&l        Вы были замутенны!'
+        - '&7'
+        - '&7       Причина: &c%punishment_reason%&7.'
+        - '&7         Истекает через: &c%punishment_expires_in%'
+        - '&8&m                                                       &7'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7забанил IP &c%punishment_user% &7на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%'
+  Unmute:
+    User:
+      Done: '{message: ~prefix: false;}&7Игрок размутен: &a%punishment_user%&7.'
+      Broadcast: '{message: ~prefix: false;}&7Админ &a%admin% &7размутил игрока: &a%punishment_user%&7.'
+    IP:
+      Done: '{message: ~prefix: false;}&7IP размутен: &a%punishment_user%&7.'
+      Broadcast: '{message: ~prefix: false;}&7Админ &a%admin% &7размутил IP: &a%punishment_user%&7.'
+  Warn:
+    User:
+      Temp:
+        Done: '{message: ~prefix: false;}&7Игрок &c%punishment_user% &7был предупрежден на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%&7.'
+        Notify:
+        - '{message: ~prefix: false;}'
+        - '&8&m                                                       &7'
+        - '&c&l        Вы были предупреждены!'
+        - '&7'
+        - '&7       Причина: &c%punishment_reason%&7.'
+        - '&7         Истекает через: &c%punishment_expires_in%'
+        - '&8&m                                                       &7'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7предупредил &c%punishment_user%&7 на &c%punishment_expires_in%&7. Причина: &c%punishment_reason%&7.'
+      Perma:
+        Done: '{message: ~prefix: false;}&7Игрок &c%punishment_user% &7был навсегда предупрежден на &c%punishment_reason%&7.'
+        Notify:
+        - '{message: ~prefix: false;}'
+        - '&8&m                                                       &7'
+        - '&c&l        Вы были предупреждены!'
+        - '&7'
+        - '&7       Причина: &c%punishment_reason%&7.'
+        - '&7         Истекает через: &c%punishment_expires_in%'
+        - '&8&m                                                       &7'
+        Broadcast: '{message: ~prefix: false;}&7Админ &c%punishment_punisher% &7навсегда предупредил &c%punishment_user%&7 на &c%punishment_reason%&7.'
+  Unwarn:
+    User:
+      Done: '{message: ~prefix: false;}&7Нежелательный игрок: &a%punishment_user%&7.'
+      Broadcast: '{message: ~prefix: false;}&7Админ &a%punishment_punisher% &7разпредупредил игрока: &a%punishment_user%&7.'
+  Error:
+    Immune: '{message: ~prefix: false;}&c%user% &7не может быть наказан.'
+    NotBanned: '{message: ~prefix: false;}&c%user% &7не забанен.'
+    NotMuted: '{message: ~prefix: false;}&c%user% &7не замутен.'
+    NotWarned: '{message: ~prefix: false;}&c%user% &7не имеет активных предупреждений.'
+    NotIP: '{message: ~prefix: false;}&c%ip% &7не является IP-адресом!'
+  Other:
+    Never: Никогда
+PunishmentType:
+  BAN: Бан
+  MUTE: Мут
+  WARN: Предупреждение
+Spawn:
+  Command:
+    DelSpawn:
+      Desc: Удалить указанный спавн.
+      Usage: <игрок>
+      Done:
+      - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&c&lСпавн Удалён'
+      - '&7Спавн Id: &c%spawn_id%'
+    SetSpawn:
+      Desc: Создать точку возрождения.
+      Usage: '[имя]'
+      Done:
+      - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 10; ~stay: 50; ~fadeOut: 10;}&a&lУстановить спавн!'
+      - '&7Спавн Id: &a%spawn_id% &7| Редактор: &a/spawneditor'
+    Spawn:
+      Desc: Телепортируйтесь на спавн.
+      Usage: '[спавн] &7или &f[игрок] [спавн]'
+      Done:
+        Self:
+        - '{message: ~prefix: false; ~type: TITLES; ~fadeIn: 10; ~stay: 80; ~fadeOut: 10;}&e&lСпавн'
+        - '&7Вы телепортировались на &7spawn.'
+        Others: '{message: ~prefix: false;}&7Телепортация &e%player% &7на спавн...'
+      Error:
+        Empty: '{message: ~prefix: false;}&7Спавн &c%spawn_id% &7не найден.'
+    SpawnEditor:
+      Desc: Откройте редактор спавна.
+  Editor:
+    Tip:
+      Name: '&7Напишите имя &aспавна&7...'
+      Priority: '&7Напишите приоритет &aспавна&7...'
+      AddGroup: '&7Напишите &aимя &7группы...'
+RTP:
+  Command:
+    RTP:
+      Desc: Телепортироваться в случайное место.
+  Teleport:
+    Error:
+      World: '{message: ~prefix: false;}&cСлучайная телепортация в этом мире запрещена.'
+      AlreadyIn: '{message: ~prefix: false;}&cВы уже находитесь в RTP!'
+    Notify:
+      Done:
+      - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 60; ~fadeOut: 10;}&a&lУспешная телепортация! '
+      - ' &7&lТы здесь: &8[&7X: &b%x%&7] &8[&7Y: &b%y%&7] &8[&7Z: &b%z%&7]'
+      Search:
+      - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 100; ~fadeOut: 10;}&e&lПоиск места... '
+      - ' &7&lПроцесс: &8[&6%attempt_current%&7/&6%attempt_max%&8]'
+      Failure:
+      - '{message: ~type: TITLES; ~fadeIn: 10; ~stay: 60; ~fadeOut: 10;}&c&lЛокация не найдена: '
+      - ' &7&lПопробуйте снова'
+Scoreboard:
+  Command:
+    Scoreboard:
+      Desc: Переключите Скорбоард.
+      Toggle: '{message: ~prefix: false;}&7Скорбоард.: &e%state%'
+WeatherType:
+  CLEAR: Clear
+  STORM: Storm
+  THUNDER: Thunder
+HomeType:
+  PUBLIC: Public
+  PRIVATE: Private
+ChatSpyType:
+  SOCIAL: Social
+  COMMAND: Command
+  CHAT: Chat
+Spawns:
+  Command:
+    Spawns:
+      Desc: Spawn management.
+      Usage: '[help]'
+      Delete:
+        Desc: Delete specified spawn.
+        Usage: <name>
+        Done:
+        - <! type:"titles:20:50:20" !>
+        - '#fd5e5e&lSpawn Deleted'
+        - '#d4d9d8You deleted #fd5e5e%spawn_name%#d4d9d8 spawn!'
+      Create:
+        Desc: Create spawn point.
+        Usage: '[name]'
+        Done:
+        - <! type:"titles:20:50:20" !>
+        - '#aefd5e&lSpawn Set!'
+        - '#d4d9d8Spawn Id: #aefd5e%spawn_id%#d4d9d8 | Editor: #aefd5e/spawns editor'
+      Teleport:
+        Desc: Teleport on specified spawn.
+        Usage: '[spawn] [player]'
+        Notify: '#d4d9d8Teleporting #fdf35e%player_display_name%#d4d9d8 on #fdf35e%spawn_id%#d4d9d8 spawn.'
+        Done:
+        - <! type:"titles:20:60:20" !>
+        - '#fdf35e&lSpawn'
+        - '#d4d9d8You teleported on the #fdf35e%spawn_name%#d4d9d8 spawn.'
+      Editor:
+        Desc: Open Spawns editor.
+  Spawn:
+    Error:
+      Invalid: '#fd5e5eSpawn does not exist.'
+  Editor:
+    Enter:
+      Name: '#d4d9d8Enter #aefd5e[Spawn Name]'
+      Priority: '#d4d9d8Enter #aefd5e[Priority]'
+      Group: '#d4d9d8Enter #aefd5e[Group Name]'

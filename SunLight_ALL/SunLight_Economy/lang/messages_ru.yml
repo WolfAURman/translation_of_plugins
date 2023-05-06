@@ -1,0 +1,31 @@
+Command:
+  Balance:
+    Usage: '[игрок]'
+    Done: '&a%player%''s &7баланс: &a%balance%'
+  BalanceTop:
+    Usage: '[игрок]'
+    Header: '{message: ~prefix: false;}&6&m               &6&l[&e&l Баланс &6&l]&m               &7'
+    Format: '{message: ~prefix: false;}&6%pos%. &e%player%: &c%money%'
+  Eco:
+    Give:
+      Usage: <игрок> <кол-во>
+      Desc: Добавляет указанную сумму денег на баланс игрока.
+      Done: '&7 Выданно &a%amount% &7игроку &a%player%&7.'
+    Take:
+      Usage: <игрок> <кол-во>
+      Desc: Снимает указанную сумму денег с баланса игрока.
+      Done: '&7 Забранно &a%amount% &7от игрока &a%player%&7.'
+    Set:
+      Usage: <игрок> <кол-во>
+      Desc: Устанавливает баланс игрока на указанную сумму.
+      Done: '&7 Установлен баланс &a%amount% к игроку &a%player%&7.'
+  Pay:
+    Usage: <игрок> <кол-во>
+    Desc: Отправьте деньги игроку.
+    Done:
+      In: '&7 Полученно &a%amount% &7от &a%player%&7.'
+      Out: '&7 Отправленно &a%amount% &7к игроку &a%player%&7.'
+    Error:
+      InsufficientFunds: '&c У тебя недостаточно денег!'
+Error:
+  NoAccount: '&c Учетная запись пользователя не существует!'

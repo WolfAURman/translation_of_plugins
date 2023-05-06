@@ -1,0 +1,59 @@
+Title: '#5d6d7e&l           %punishment_type% Лист'
+Size: 54
+Inventory_Type: CHEST
+Use_Mini_Message: false
+
+Punishment:
+  Default_Head_Texture: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjcwNWZkOTRhMGM0MzE5MjdmYjRlNjM5YjBmY2ZiNDk3MTdlNDEyMjg1YTAyYjQzOWUwMTEyZGEyMmIyZTJlYyJ9fX0='
+  Active:
+    Name: '#ff9a9a&l%punishment_type%: &f%punishment_user%'
+    Lore:
+      - '#ff9a9a&lИнфо:'
+      - '#ff9a9a▪ #ddeceeАдминистратор: #ff9a9a%punishment_punisher%'
+      - '#ff9a9a▪ #ddeceeПричина: #ff9a9a%punishment_reason%'
+      - '#ff9a9a▪ #ddeceeДата: #ff9a9a%punishment_date_created%'
+      - '#ff9a9a▪ #ddeceeИстекает: #ff9a9a%punishment_expires_in%'
+      - ''
+      - '#a5ff9a&lActions:'
+      - '#a5ff9a▪ #ddeceeShift-Left: #a5ff9aExpire'
+  Expired:
+    Name: '#ffea85&l%punishment_type%: &f%punishment_user%'
+    Lore:
+      - '#ffea85&lИнфо:'
+      - '#ffea85▪ #ddeceeАдминистратор: #ffea85%punishment_punisher%'
+      - '#ffea85▪ #ddeceeПричина: #ffea85%punishment_reason%'
+      - '#ffea85▪ #ddeceeДата: #ffea85%punishment_date_created%'
+      - '#ffea85▪ #ddeceeИстекает: #ffea85%punishment_date_expired%'
+      - ''
+      - '#a5ff9a&lДействия:'
+      - '#a5ff9a▪ #ddeceeПКМ: #a5ff9aУдалить из базы данных'
+  Slots: 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44
+
+Content:
+  return:
+    Priority: 5
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmU5YWU3YTRiZTY1ZmNiYWVlNjUxODEzODlhMmY3ZDQ3ZTJlMzI2ZGI1OWVhM2ViNzg5YTkyYzg1ZWE0NiJ9fX0=
+      Name: '#e6e4dd(↓) &fЗакрыть меню'
+      Lore: []
+    Slots: 49
+    Type: CLOSE
+
+  page_next:
+    Slots: 53
+    Type: PAGE_NEXT
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjMyY2E2NjA1NmI3Mjg2M2U5OGY3ZjMyYmQ3ZDk0YzdhMGQ3OTZhZjY5MWM5YWMzYTkxMzYzMzEzNTIyODhmOSJ9fX0=
+      Name: '#e6e4dd(→) &fСледущая страница'
+    Priority: 5
+
+  page_previous:
+    Slots: 45
+    Type: PAGE_PREVIOUS
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODY5NzFkZDg4MWRiYWY0ZmQ2YmNhYTkzNjE0NDkzYzYxMmY4Njk2NDFlZDU5ZDFjOTM2M2EzNjY2YTVmYTYifX19
+      Name: '#e6e4dd(←) &fПредыдущая страница'
+    Priority: 5

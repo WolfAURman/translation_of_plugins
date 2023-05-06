@@ -1,0 +1,169 @@
+Title: '#5d6d7e           &lНастройки варпа'
+Size: 45
+
+Content:
+  exit:
+    Priority: 5
+    Slots: 40
+    Type: RETURN
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmU5YWU3YTRiZTY1ZmNiYWVlNjUxODEzODlhMmY3ZDQ3ZTJlMzI2ZGI1OWVhM2ViNzg5YTkyYzg1ZWE0NiJ9fX0=
+      Name: '#e3fbf9(↓) &lВернуться'
+
+Editor:
+  location:
+    Item:
+      Material: COMPASS
+      Name: '#ee9aff&lЛокация'
+      Lore:
+      - '#ee9aff▪ #ddeceeМир: #ee9aff%warp_location_world%'
+      - '#ee9aff▪ #ddeceeX: #ee9aff%warp_location_x%'
+      - '#ee9aff▪ #ddeceeY: #ee9aff%warp_location_y%'
+      - '#ee9aff▪ #ddeceeZ: #ee9aff%warp_location_z%'
+    Slots: 4
+    Type: WARP_CHANGE_LOCATION
+    Priority: 5
+  
+  name:
+    Item:
+      Material: NAME_TAG
+      Name: '#ee9aff&lОтображаемое название'
+      Lore:
+      - '#ee9aff▪ #ddeceeТекущее: #ee9aff%warp_name%'
+      - ''
+      - '#ddeceeУстанавливает отображаемое имя варпа.'
+      - '#ddeceeБудет отображаться в меню и сообщениях.'
+      - ''
+      - '#9af7ff&lДействие:'
+      - '#9af7ff▪ #ddeceeЛКМ: #9af7ffИзменить'
+    Slots: 12
+    Type: WARP_CHANGE_NAME
+    Priority: 5
+  
+  type:
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2I1NmU0OTA4NWY1NWQ1ZGUyMTVhZmQyNmZjNGYxYWZlOWMzNDMxM2VmZjk4ZTNlNTgyNDVkZWYwNmU1ODU4YyJ9fX0=
+      Name: '#ee9aff&lТип варпа'
+      Lore:
+      - '#ee9aff▪ #ddeceeТекущий: #ee9aff%warp_type%'
+      - ''
+      - '#ddeceeУстанавливает тип/категорию варпа для графического интерфейса.'
+      - ''
+      - '#9af7ff&lДействие:'
+      - '#9af7ff▪ #ddeceeЛКМ: #9af7ffИзменить'
+    Slots: 8
+    Type: WARP_CHANGE_TYPE
+    Priority: 5
+  
+  icon:
+    Item:
+      Material: ITEM_FRAME
+      Name: '#ee9aff&lЗначок'
+      Lore:
+      - '#ddeceeУстанавливает значок варпа,'
+      - '#ddeceeкоторый будет отображаться в графическом интерфейсе.'
+      - ''
+      - '#9af7ff&lДействие:'
+      - '#9af7ff▪ #ddeceeПоместить предмет: #9af7ffИзменить'
+    Slots: 13
+    Type: WARP_CHANGE_ICON
+    Priority: 5
+  
+  description:
+    Item:
+      Material: PAPER
+      Name: '#ee9aff&lОписание'
+      Lore:
+      - '#ee9aff▪ #ddeceeТекущее: '
+      - '#ee9aff%warp_description%'
+      - ''
+      - '#ddeceeОписание отображается в графическом интерфейсе варпов'
+      - '#ddeceeaи при посещении варпа.'
+      - ''
+      - '#9af7ff&lДействие:'
+      - '#9af7ff▪ #ddeceeЛКМ: #9af7ffИзменить'
+    Slots: 14
+    Type: WARP_CHANGE_DESCRIPTION
+    Priority: 5
+  
+  shortcut:
+    Item:
+      Material: COMMAND_BLOCK
+      Name: '#ee9aff&lЯрлык команды'
+      Lore:
+      - '#ee9aff▪ #ddeceeТекущий: #ee9aff/%warp_command_shortcut%'
+      - ''
+      - '#ddeceeСоздает пользовательскую команду для этого варпа.'
+      - ''
+      - '#ff9a9a[!] #ddeceeЭтот параметр повлияет на модуль #ff9a9aперезагрузкой#ddecee оного.'
+      - ''
+      - '#9af7ff&lДействие:'
+      - '#9af7ff▪ #ddeceeЛКМ: #9af7ffИзменить'
+      - '#9af7ff▪ #ddeceeПКМ: #9af7ffОтключить'
+    Slots: 31
+    Type: WARP_CHANGE_COMMAND_SHORTCUT
+    Priority: 5
+  
+  permission:
+    Item:
+      Material: REDSTONE_TORCH
+      Name: '#ee9aff&lТребование разрешения'
+      Lore:
+      - '#ee9aff▪ #ddeceeВключено: #ee9aff%warp_permission_required%'
+      - '#ee9aff▪ #ddeceeУзел: #ee9aff%warp_permission_node%'
+      - ''
+      - '#ddeceeУстанавливает, должен ли игрок иметь разрешение'
+      - '#ddeceeчтобы иметь возможность использовать этот варп.'
+      - ''
+      - '#9af7ff&lДействие:'
+      - '#9af7ff▪ #ddeceeЛКМ: #9af7ffВкл/Выкл'
+    Slots: 0
+    Type: WARP_CHANGE_PERMISSION
+    Priority: 5
+  
+  visit_cost:
+    Item:
+      Material: GOLD_NUGGET
+      Name: '#ee9aff&lСтоимость посещения'
+      Lore:
+      - '#ee9aff▪ #ddeceeТекущая: #ee9aff$%warp_visit_cost%'
+      - ''
+      - '#ddeceeУстанавливает, сколько денег игроку придется заплатить'
+      - '#ddeceeчтобы использовать этот варп.'
+      - ''
+      - '#9af7ff&lДействие:'
+      - '#9af7ff▪ #ddeceeЛКМ: #9af7ffИзменить'
+      - '#9af7ff▪ #ddeceeПКМ: #9af7ffDisable'
+    Slots: 21
+    Type: WARP_Изменить_VISIT_COST
+    Priority: 5
+  
+  visit_time:
+    Item:
+      Material: CLOCK
+      Name: '#ee9aff&lВремя посещения и кулдауна'
+      Lore:
+      - '#ee9aff▪ #ddeceeКулдаун: #ee9aff%warp_visit_cooldown%'
+      - '#ee9aff▪ #ddeceeВремя: '
+      - '#ee9aff%warp_visit_times%'
+      - ''
+      - '#ddeceeУстанавливает кулдаун'
+      - '#ddeceeдля следующего посещения варпа для каждого игрока.'
+      - '#ddeceeУстанавливает время,'
+      - '#ddeceeкогда этот варп доступен для посещений.'
+      - ''
+      - '#9af7ff&lДействия:'
+      - '#9af7ff▪ #ddeceeЛКМ: #9af7ffИзменить кулдаун'
+      - '#9af7ff▪ #ddeceeПКМ: #9af7ffОтключить кулдаун'
+      - '#9af7ff▪ #ddeceeШифт+ЛКМ: #9af7ffДобавить время'
+      - '#9af7ff▪ #ddeceeШифт+ПКМ: #9af7ffОчистить время'
+    Slots: 23
+    Type: WARP_CHANGE_VISIT_TIMES
+    Priority: 5
+# Sets Inventory Type for the GUI.
+# https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/inventory/InventoryType.html
+Inventory_Type: CHEST
+# Sets whether to use Paper's MiniMessage API for the GUI Title.
+Use_Mini_Message: false

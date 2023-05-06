@@ -1,0 +1,62 @@
+Title: '#8c5be1          &lНаборы'
+Size: 54
+# Sets whether to use Paper's MiniMessage API for the GUI Title.
+Use_Mini_Message: false
+
+Kit:
+  Name: '#9af7ff&lНабор: &f%kit_name%'
+  Lore:
+    Default:
+    - '%kit_description%'
+    - ''
+    - '#9af7ff&lИнфо:'
+    - '#9af7ff▪ #ddeceeЦена: #9af7ff$%kit_cost_money%'
+    - '#9af7ff▪ #ddeceeКулдаун: #9af7ff%kit_cooldown%'
+    - ''
+    - '%no_permission%'
+    - '%no_money%'
+    - '%cooldown%'
+    - ''
+    - '#a5ff9a&lДействия:'
+    - '#a5ff9a▪ #ddeceeЛКМ: #a5ff9aПолучить'
+    - '#a5ff9a▪ #ddeceeПКМ: #a5ff9aПредпросмотр'
+    No_Permission:
+    - '#ff9a9a[!] #ddeceeУ вас нет #ff9a9aразрешения#ddecee для использования этого набора.'
+    No_Money:
+    - '#ff9a9a[!] #ddeceeУ вас нет нужного кол-ва #ff9a9aмонет#ddecee для использования этого набора.'
+    Cooldown:
+    - '#ff9a9a[!] #ddeceeВы можете получить этот кит через #ff9a9a%cooldown%#ddecee.'
+  Slots: 11,13,15,29,31,33
+
+Content:
+  
+  return:
+    Priority: 5
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmU5YWU3YTRiZTY1ZmNiYWVlNjUxODEzODlhMmY3ZDQ3ZTJlMzI2ZGI1OWVhM2ViNzg5YTkyYzg1ZWE0NiJ9fX0=
+      Name: '#ffee9a(↓) &fЗакрыть'
+      Lore: []
+    Slots: 49
+    Type: CLOSE
+  
+  page_next:
+    Slots: 53
+    Type: PAGE_NEXT
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjMyY2E2NjA1NmI3Mjg2M2U5OGY3ZjMyYmQ3ZDk0YzdhMGQ3OTZhZjY5MWM5YWMzYTkxMzYzMzEzNTIyODhmOSJ9fX0=
+      Name: '#ffee9a(→) &fСледующая страница'
+    Priority: 5
+  
+  page_previous:
+    Slots: 45
+    Type: PAGE_PREVIOUS
+    Item:
+      Material: PLAYER_HEAD
+      Head_Texture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODY5NzFkZDg4MWRiYWY0ZmQ2YmNhYTkzNjE0NDkzYzYxMmY4Njk2NDFlZDU5ZDFjOTM2M2EzNjY2YTVmYTYifX19
+      Name: '#ffee9a(←) &fПредыдущая страница'
+    Priority: 5
+# Sets Inventory Type for the GUI.
+# https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/inventory/InventoryType.html
+Inventory_Type: CHEST
